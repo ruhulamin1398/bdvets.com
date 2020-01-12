@@ -16,10 +16,13 @@ class CreateUnionsTable extends Migration
         Schema::create('unions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('upazilla_id');
-            $table->string('name');
-            $table->string('bn_name');
-            $table->string('url');
+            $table->string('name')->nullable();
+            $table->string('bn_name')->nullable();
+            $table->string('url')->nullable();
             $table->timestamps();
+
+
+            $table->foreign("upazilla_id")->references("id")->on("upazillas");
         });
     }
 

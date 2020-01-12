@@ -16,11 +16,11 @@ class CreateDistrictsTable extends Migration
         Schema::create('districts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('division_id');
-            $table->string('name');
-            $table->string('bn_name');
-            $table->string('lat');
-            $table->string('lon');
-            $table->string('url');
+            $table->string('name')->nullable();
+            $table->string('bn_name')->nullable();
+            $table->string('lat')->nullable();
+            $table->string('lon')->nullable();
+            $table->string('url')->nullable();
 
             $table->timestamps();
 

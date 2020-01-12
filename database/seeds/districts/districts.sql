@@ -1,38 +1,5 @@
 
 
--- SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
--- SET AUTOCOMMIT = 0;
--- START TRANSACTION;
--- SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `districts`
---
-
--- CREATE TABLE `districts` (
---   `id` int(2) NOT NULL,
---   `division_id` int(1) NOT NULL,
---   `name` varchar(25) NOT NULL,
---   `bn_name` varchar(25) NOT NULL,
---   `lat` varchar(15) DEFAULT NULL,
---   `lon` varchar(15) DEFAULT NULL,
---   `url` varchar(50) NOT NULL
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `districts`
---
-
 INSERT INTO `districts` (`id`, `division_id`, `name`, `bn_name`, `lat`, `lon`, `url`) VALUES
 (1, 1, 'Comilla', 'কুমিল্লা', '23.4682747', '91.1788135', 'www.comilla.gov.bd'),
 (2, 1, 'Feni', 'ফেনী', '23.023231', '91.3840844', 'www.feni.gov.bd'),
@@ -99,38 +66,4 @@ INSERT INTO `districts` (`id`, `division_id`, `name`, `bn_name`, `lat`, `lon`, `
 (63, 8, 'Jamalpur', 'জামালপুর', '24.937533', '89.937775', 'www.jamalpur.gov.bd'),
 (64, 8, 'Netrokona', 'নেত্রকোণা', '24.870955', '90.727887', 'www.netrokona.gov.bd');
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `districts`
---
--- ALTER TABLE `districts`
---   ADD PRIMARY KEY (`id`),
---   ADD KEY `division_id` (`division_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `districts`
--- --
--- ALTER TABLE `districts`
---   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `districts`
--- --
--- ALTER TABLE `districts`
---   ADD CONSTRAINT `districts_ibfk_2` FOREIGN KEY (`division_id`) REFERENCES `divisions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
--- COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
