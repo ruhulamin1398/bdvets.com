@@ -6,7 +6,7 @@
 
 
 
-  <div class="card  bg-dark mb-2">
+  <div class="card  bg-abasas-dark mb-2">
 
 
     <!-- Nav Item - Dashboard -->
@@ -74,7 +74,7 @@
   </div>
 
   
-  <div class="card  bg-dark mb-2">
+  <div class="card  bg-abasas-dark mb-2">
 
 
     <hr class="sidebar-divider m-1 p-0 ">

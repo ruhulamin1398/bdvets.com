@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Foyej Seed Company </title>
+    <title>Bdvets.com </title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('file/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -25,7 +25,7 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
     <!-- Custom style-->
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/abasas.css')}}" rel="stylesheet">
 
 </head>
 
@@ -40,7 +40,7 @@
 
         <!-- Page Wrapper -->
         <div id="wrapper">
-            @include('layout.sidevar')
+            @include('layout.sidebar')
             @yield('content')
         </div>
     </div>
@@ -67,8 +67,6 @@
     <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
 
-
-
     <!-- Page level plugins -->
     <script src="{{asset('file/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('file/datatables/dataTables.bootstrap4.min.js')}}"></script>
@@ -76,10 +74,6 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
     <script src="{{asset('js/custom/datatables.js')}}"></script>
-    <script src="{{asset('js/custom/product.js')}}"></script>
-    <script src="{{asset('js/custom/supplier.js')}}"></script>
-    <script src="{{asset('js/custom/purchase.js')}}"></script>
-    <script src="{{asset('js/custom/order.js')}}"></script>
 
 
 
