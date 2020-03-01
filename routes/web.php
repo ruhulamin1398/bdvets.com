@@ -15,7 +15,7 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get("/","UserController@index");
+Route::get("/","UserController@index")->name('index');
 
 Auth::routes();
 
