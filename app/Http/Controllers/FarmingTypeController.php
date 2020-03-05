@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\division;
-use App\Farmer;
-use App\village;
+use App\farming_type;
 use Illuminate\Http\Request;
 
-class FarmerController extends Controller
+class FarmingTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,14 +14,7 @@ class FarmerController extends Controller
      */
     public function index()
     {
-        $divisions = division::all();
-       
-        return view("farmer.index",compact('divisions'));
-    }
-    public function villageFarmerListApi(Request $request){
-        
-        return village::find($request->village_id)->farmers;
-
+        //
     }
 
     /**
@@ -50,10 +41,10 @@ class FarmerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Farmer  $farmer
+     * @param  \App\farming_type  $farming_type
      * @return \Illuminate\Http\Response
      */
-    public function show(Farmer $farmer)
+    public function show(farming_type $farming_type)
     {
         //
     }
@@ -61,10 +52,10 @@ class FarmerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Farmer  $farmer
+     * @param  \App\farming_type  $farming_type
      * @return \Illuminate\Http\Response
      */
-    public function edit(Farmer $farmer)
+    public function edit(farming_type $farming_type)
     {
         //
     }
@@ -73,10 +64,10 @@ class FarmerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Farmer  $farmer
+     * @param  \App\farming_type  $farming_type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Farmer $farmer)
+    public function update(Request $request, farming_type $farming_type)
     {
         //
     }
@@ -84,15 +75,11 @@ class FarmerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Farmer  $farmer
+     * @param  \App\farming_type  $farming_type
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Farmer $farmer)
+    public function destroy(farming_type $farming_type)
     {
         //
     }
-
-
-
-
 }

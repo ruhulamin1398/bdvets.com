@@ -35,6 +35,7 @@
 
 
     @include('layout.nav')
+    @include('layout.form_link')
 
     <div style="margin :20px 50px;">
 
@@ -45,8 +46,9 @@
         </div>
     </div>
 
-  @include('layout.footer') 
-
+    @include('layout.footer')
+    
+    
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('file/jquery/jquery.min.js')}}"></script>
@@ -74,6 +76,10 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
     <script src="{{asset('js/custom/datatables.js')}}"></script>
+    <script src="{{asset('js/custom/chosen.js')}}"></script>
+    <script src="{{asset('js/custom/location.js')}}"></script>
+    <script src="{{asset('js/custom/village.js')}}"></script>
+    <script src="{{asset('js/custom/farmer.js')}}"></script>
 
 
 

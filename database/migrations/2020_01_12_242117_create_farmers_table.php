@@ -15,23 +15,22 @@ class CreateFarmersTable extends Migration
     {
         Schema::create('farmers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable();
 
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('gender');
-            $table->unsignedBigInteger('division_id');
-            $table->unsignedBigInteger('district_id');
-            $table->unsignedBigInteger('upazilla_id');
-            $table->unsignedBigInteger('union_id');
+            $table->string('email')->nullable()-> unique();
+            $table->string('gender')->nullable();
+            $table->unsignedBigInteger('division_id')->nullable();
+            $table->unsignedBigInteger('district_id')->nullable();
+            $table->unsignedBigInteger('upazilla_id')->nullable();
+            $table->unsignedBigInteger('union_id')->nullable();
             $table->unsignedBigInteger('village_id');
-            $table->string('farming_type')->nullable()->default(null);
-            
+            $table->unsignedBigInteger('farming_type_id')->nullable();            
             $table->unsignedBigInteger('cattle')->nullable()->default(0);
             $table->unsignedBigInteger('goat')->nullable()->default(0);
             $table->unsignedBigInteger('buffalo')->nullable()->default(0);
             $table->unsignedBigInteger('sheep')->nullable()->default(0);
-            $table->unsignedBigInteger('pultry')->nullable()->default(0);
+            $table->unsignedBigInteger('poultry')->nullable()->default(0);
             $table->unsignedBigInteger('chicken')->nullable()->default(0);
             $table->unsignedBigInteger('duck')->nullable()->default(0);
             $table->unsignedBigInteger('pigeon')->nullable()->default(0);
@@ -46,6 +45,7 @@ class CreateFarmersTable extends Migration
             $table->foreign("upazilla_id")->references("id")->on("upazillas");
             $table->foreign("union_id")->references("id")->on("unions");
             $table->foreign("village_id")->references("id")->on("villages");
+            $table->foreign("farming_type_id")->references("id")->on("farming_types");
 
         });
     }

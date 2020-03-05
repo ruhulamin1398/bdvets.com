@@ -17,18 +17,11 @@
     </li>
     <hr class="sidebar-divider m-1 p-0 ">
     <!-- Product Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed  p-3 " href="#" data-toggle="collapse" data-target="#collapseProducts" aria-expanded="true" aria-controls="collapseProducts">
-        <i class="fas fa-fw fa-cog "></i>
-        <span>Farmer</span>
-      </a>
-      <div id="collapseProducts" class="collapse" aria-labelledby="headingProducts" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-
-          <a class="collapse-item" href="{{'' }}">Farmer</a>
-          <a class="collapse-item" href="{{ '' }}">Add New</a>
-        </div>
-      </div>
+       <!-- Nav Item - Dashboard -->
+       <li class="nav-item  ">
+      <a class="nav-link p-3 " href="{{route('farmers.index')}}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Farmer</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider m-1 p-0 ">
