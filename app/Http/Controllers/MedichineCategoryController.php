@@ -14,8 +14,19 @@ class MedichineCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = MedichineCategory::all();
+
+        return view('medichine.categories',compact('categories'));
+
     }
+
+    public function medichineCategoryListApi()
+{
+    $medichineCategories = MedichineCategory::all();
+
+    return $medichineCategories;
+
+}
 
     /**
      * Show the form for creating a new resource.
@@ -35,7 +46,12 @@ class MedichineCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $medichineCategory = new MedichineCategory;
+
+        $medichineCategory->name= $request->name;
+        $medichineCategory->description = $request->description;
+        $medichineCategory->save();
+        return back();
     }
 
     /**
@@ -69,7 +85,10 @@ class MedichineCategoryController extends Controller
      */
     public function update(Request $request, MedichineCategory $medichineCategory)
     {
-        //
+        $medichineCategory->name= $request->name;
+        $medichineCategory->description = $request->description;
+        $medichineCategory->save();
+        return back();
     }
 
     /**
@@ -80,6 +99,7 @@ class MedichineCategoryController extends Controller
      */
     public function destroy(MedichineCategory $medichineCategory)
     {
-        //
+        $medichineCategory->delete();
+        return back();
     }
 }
