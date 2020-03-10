@@ -21,6 +21,8 @@ Route::post("/village-store","LocationController@villageStore")->name('village-s
 Route::resource('offices', 'OfficeController');
 
 Route::resource('farmers', 'FarmerController');
+Route::resource('medichines', 'MedichineController');
+Route::resource('medichine-categories', 'MedichineCategoryController');
 
 
 Auth::routes();
@@ -36,7 +38,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-//////////   Api Links 
+//////////   Api Links
 
 Route::get('divisions_list_api', 'LocationController@divisionListApi')->name('divisions_list_api');
 Route::get('district_list_api', 'LocationController@districtListApi')->name('district_list_api');

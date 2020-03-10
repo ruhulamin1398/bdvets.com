@@ -80,6 +80,7 @@
     <script src="{{asset('js/custom/location.js')}}"></script>
     <script src="{{asset('js/custom/village.js')}}"></script>
     <script src="{{asset('js/custom/farmer.js')}}"></script>
+    <script src="{{asset('js/custom/medichine.js')}}"></script>
 
 
 

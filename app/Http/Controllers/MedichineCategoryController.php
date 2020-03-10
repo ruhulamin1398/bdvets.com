@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\medicine;
+use App\MedichineCategory;
 use Illuminate\Http\Request;
 
-class MedicineController extends Controller
+class MedichineCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class MedicineController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\medicine  $medicine
+     * @param  \App\MedichineCategory  $medichineCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(medicine $medicine)
+    public function show(MedichineCategory $medichineCategory)
     {
         //
     }
@@ -52,10 +52,10 @@ class MedicineController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\medicine  $medicine
+     * @param  \App\MedichineCategory  $medichineCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(medicine $medicine)
+    public function edit(MedichineCategory $medichineCategory)
     {
         //
     }
@@ -64,10 +64,10 @@ class MedicineController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\medicine  $medicine
+     * @param  \App\MedichineCategory  $medichineCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, medicine $medicine)
+    public function update(Request $request, MedichineCategory $medichineCategory)
     {
         //
     }
@@ -75,10 +75,10 @@ class MedicineController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\medicine  $medicine
+     * @param  \App\MedichineCategory  $medichineCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(medicine $medicine)
+    public function destroy(MedichineCategory $medichineCategory)
     {
         //
     }

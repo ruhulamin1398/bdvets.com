@@ -16,8 +16,8 @@ class CreateOfficesTable extends Migration
         Schema::create('offices', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string("name");
-            $table->string("email")->unique->nullable();;
-            $table->string("phone")->unique->nullable();;
+            $table->string("email")->nullable()-> unique();
+            $table->string("phone")->nullable()-> unique();
             $table->string("about",1000)->nullable();;
             $table->timestamps();
             

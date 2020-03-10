@@ -41,7 +41,7 @@
         </div>
       </div>
     </li>
-    
+
     <hr class="sidebar-divider m-1 p-0 ">
     <!--Category  Collapse Menu -->
     <li class="nav-item">
@@ -52,8 +52,8 @@
       <div id="collapseMedichine" class="collapse" aria-labelledby="headingMedichine" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
 
-          <a class="collapse-item" href="{{ ' ' }}">Medichines</a>
-          <a class="collapse-item" href="{{ ' ' }}">New Medichine</a>
+          <a class="collapse-item" href="{{ route('medichines.index') }}">Medichines</a>
+          <a class="collapse-item" href="{{ route('medichine-categories.index')  }}">Categorories</a>
 
         </div>
       </div>
@@ -66,7 +66,7 @@
 
   </div>
 
-  
+
   <div class="card  bg-abasas-dark mb-2">
 
 
