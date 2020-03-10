@@ -15,9 +15,12 @@ class CreateMedichinesTable extends Migration
     {
         Schema::create('medichines', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('medichine_category_id');
             $table->string('name');
             $table->string('description')->nullable();
             $table->timestamps();
+
+            $table->foreign('medichine_category_id')->references('id')->on('medichine_categories');
         });
     }
 

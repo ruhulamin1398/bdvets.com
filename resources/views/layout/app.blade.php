@@ -47,8 +47,8 @@
     </div>
 
     @include('layout.footer')
-    
-    
+
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('file/jquery/jquery.min.js')}}"></script>
@@ -81,6 +81,7 @@
     <script src="{{asset('js/custom/village.js')}}"></script>
     <script src="{{asset('js/custom/farmer.js')}}"></script>
     <script src="{{asset('js/custom/medichine.js')}}"></script>
+    <script src="{{asset('js/custom/category.js')}}"></script>
 
 
 

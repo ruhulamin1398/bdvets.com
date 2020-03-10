@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\medichine;
+use App\MedichineCategory;
 use Illuminate\Http\Request;
 
 class MedichineController extends Controller
@@ -14,9 +15,12 @@ class MedichineController extends Controller
      */
     public function index()
     {
+
+        $medichineCategories= MedichineCategory::all();
         $medichines = medichine::all();
 
-       return view('medichine.index',compact('medichines'));
+
+       return view('medichine.index',compact('medichines','medichineCategories'));
     }
 
     /**
@@ -41,7 +45,8 @@ class MedichineController extends Controller
        $medichine = new medichine;
 
        $medichine->name= $request->name;
-       $medichine->description = $request->description;
+        $medichine->description = $request->description;
+        $medichine->medichine_category_id = $request->medichine_category_id;
        $medichine->save();
        return back();
     }
@@ -80,6 +85,8 @@ class MedichineController extends Controller
     {
         $medichine->name= $request->name;
         $medichine->description = $request->description;
+
+        $medichine->medichine_category_id = $request->medichine_category_id;
         $medichine->save();
          return back();
     }
@@ -92,6 +99,7 @@ class MedichineController extends Controller
      */
     public function destroy(medichine $medichine)
     {
-        //
+      $medichine->delete();
+      return  back();
     }
 }

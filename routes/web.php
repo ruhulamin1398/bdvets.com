@@ -47,3 +47,4 @@ Route::get('union_list_api', 'LocationController@unionListApi')->name('union_lis
 Route::get('village_list_api', 'LocationController@villageListApi')->name('village_list_api');
 
 Route::get('village_farmer_list_api', 'FarmerController@villageFarmerListApi')->name('village_farmer_list_api');
+Route::get('medichine_category_list_api', 'MedichineCategoryController@medichineCategoryListApi')->name('medichine_category_list_api');

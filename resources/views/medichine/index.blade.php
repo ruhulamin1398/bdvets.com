@@ -25,6 +25,17 @@
                         <span class="text-dark pl-2"> Name</span>
                         <input type="text" name="name" class="form-control mb-2" id="inlineFormInput" required >
                     </div>
+
+                    <div class="form-group">
+                        <label for="catagory_id"> Category</label>
+                        <select class="form-control mb-2" name="medichine_category_id" id="catagory_id"    required>
+                            <option value="1" selected="selected"> Select Category</option>
+                            @foreach ($medichineCategories as $medichineCategory)
+                                <option value="{{$medichineCategory->id}}"> {{$medichineCategory->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="col-auto">
 
                         <span class="text-dark pl-2">Description</span>
@@ -61,6 +72,7 @@
                         <tr>
                             <th>#</th>
                             <th>Name</th>
+                            <th>Category</th>
                             <th>Description</th>
                             <th>Action</th>
                         </tr>
@@ -70,6 +82,7 @@
 
                             <th>#</th>
                             <th>Name</th>
+                            <th>Category</th>
                             <th>Description</th>
                             <th>Action</th>
 
@@ -84,6 +97,7 @@
                         <tr class="data-row">
                             <td class="iteration">{{$i++}}</td>
                             <td class="  word-break name">{{$medichine->name}}</td>
+                            <td class="  word-break medichineCategory">{{$medichine->category->name}}</td>
                             <td class=" word-break description ">{{$medichine->description}}</td>
 
 
@@ -135,7 +149,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-dark" id="edit-modal-label ">তথ্য সংশোধন</h5>
+                <h5 class="modal-title text-dark" id="edit-modal-label ">Edit Medichine</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -148,25 +162,33 @@
 
                     <!-- id -->
                     <div class="form-group">
-                        <label class="col-form-label" for="medichine-modal-input-id">আইডি </label>
+                        <label class="col-form-label" for="medichine-modal-input-id">Id </label>
                         <input type="text" name="id" class="form-control" id="medichine-modal-input-id" required readonly>
                     </div>
                     <!-- /id -->
                     <!-- name -->
                     <div class="form-group">
-                        <label class="col-form-label" for="medichine-modal-input-name">ক্যাটাগরি নাম</label>
+                        <label class="col-form-label" for="medichine-modal-input-name">Name</label>
                         <input type="text" name="name" class="form-control" id="medichine-modal-input-name" required autofocus>
                     </div>
+                    <div class="form-group">
+                        <label for="catagory_id"> Category</label>
+                        <select class="form-control mb-2" name="medichine_category_id" id="medichine-modal-input-catagory_id"    required>
+
+
+                        </select>
+                    </div>
+
                     <!-- /name -->
                     <!-- description -->
                     <div class="form-group">
-                        <label class="col-form-label" for="medichine-modal-input-description">বিবরন</label>
+                        <label class="col-form-label" for="medichine-modal-input-description">Description</label>
                         <input type="text" name="description" class="form-control" id="medichine-modal-input-description" required>
                     </div>
 
                     <div class="form-group">
 
-                        <input type="submit" value=" সাবমিট" class="form-control btn btn-success">
+                        <input type="submit" value="Submit" class="form-control btn btn-success">
                     </div>
                     <!-- /description -->
 
