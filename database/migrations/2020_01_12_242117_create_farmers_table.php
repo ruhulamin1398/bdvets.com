@@ -19,7 +19,8 @@ class CreateFarmersTable extends Migration
 
             $table->string('name');
             $table->string('email')->nullable()-> unique();
-            $table->string('gender')->nullable();
+            $table->string('phone')->nullable()-> unique();
+            $table->string('gender')->default("Male");
             $table->unsignedBigInteger('division_id')->nullable();
             $table->unsignedBigInteger('district_id')->nullable();
             $table->unsignedBigInteger('upazilla_id')->nullable();

@@ -30,25 +30,29 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Ruhul',
                 'email' => 'ruhul.ok@gmail.com',
                 'password' => Hash::make(1234),
-                'role_id' => 1
+                'role_id' => 1,
+                'status' => 1
             ],
             [
                 'name' => 'admin',
                 'email' => 'admin@gmail.com',
                 'password' => Hash::make(1234),
-                'role_id' => 1
+                'role_id' => 1,
+                'status' => 1
             ],
             [
                 'name' => 'doctor',
                 'email' => 'doctor@gmail.com',
                 'password' => Hash::make(1234),
-                'role_id' => 2
+                'role_id' => 2,
+                'status' => 1
             ],
             [
                 'name' => 'pharmacy',
                 'email' => 'pharmacy@gmail.com',
                 'password' => Hash::make(1234),
-                'role_id' => 3
+                'role_id' => 3,
+                'status' => 1
             ],
 
         ]);

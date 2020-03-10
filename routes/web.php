@@ -12,15 +12,13 @@
 */
 
 
-Route::get('/index', function () {
-    return view('index');
-});
 
 Route::get("/","UserController@index")->name('index');
 Route::get("/village","LocationController@village")->name('village');
 Route::post("/village-store","LocationController@villageStore")->name('village-store');
 
 
+Route::resource('offices', 'OfficeController');
 
 Route::resource('farmers', 'FarmerController');
 
