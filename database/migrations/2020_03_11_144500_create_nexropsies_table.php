@@ -15,7 +15,7 @@ class CreateNexropsiesTable extends Migration
     {
         Schema::create('nexropsies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('description')->nullable();
             $table->timestamps();
         });

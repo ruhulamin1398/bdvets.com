@@ -17,6 +17,7 @@ class CreateDoctorsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->unique();
             $table->unsignedBigInteger('office_id');
+            $table->string('designation');
             $table->timestamps();
         });
     }

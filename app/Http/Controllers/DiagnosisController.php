@@ -15,7 +15,9 @@ class DiagnosisController extends Controller
     public function index()
     {
         
-        return view('prescription.diagnosis' );
+        $diagnosises= diagnosis:: all();
+        return view('prescription.diagnosis',compact('diagnosises') );
+        
     }
 
     /**
@@ -36,7 +38,12 @@ class DiagnosisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $diagnosis = new diagnosis;
+        
+        $diagnosis->name= $request->name;
+        $diagnosis->description = $request->description;
+        $diagnosis->save();
+        return back();
     }
 
     /**
@@ -68,9 +75,12 @@ class DiagnosisController extends Controller
      * @param  \App\diagnosis  $diagnosis
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, diagnosis $diagnosis)
+    public function update(Request $request, diagnosis $diagnosi)
     {
-        //
+        $diagnosi->name= $request->name;
+        $diagnosi->description = $request->description;
+        $diagnosi->save();
+        return back();
     }
 
     /**
@@ -79,8 +89,11 @@ class DiagnosisController extends Controller
      * @param  \App\diagnosis  $diagnosis
      * @return \Illuminate\Http\Response
      */
-    public function destroy(diagnosis $diagnosis)
+    public function destroy(diagnosis $diagnosi)
     {
-        //
+       
+       
+        $diagnosi->delete();
+        return back();
     }
 }

@@ -14,7 +14,9 @@ class NexropsyController extends Controller
      */
     public function index()
     {
-        return view('prescription.necropsy' );
+        
+        $necropsyes= nexropsy:: all();
+        return view('prescription.necropsy',compact('necropsyes') );
     }
 
     /**
@@ -35,7 +37,12 @@ class NexropsyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nexrops = new nexropsy;
+        
+        $nexrops->name= $request->name;
+        $nexrops->description = $request->description;
+        $nexrops->save();
+        return back();
     }
 
     /**
@@ -67,9 +74,12 @@ class NexropsyController extends Controller
      * @param  \App\nexropsy  $nexropsy
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, nexropsy $nexropsy)
+    public function update(Request $request, nexropsy $necropsy)
     {
-        //
+        $necropsy->name= $request->name;
+        $necropsy->description = $request->description;
+        $necropsy->save();
+        return back();
     }
 
     /**
@@ -78,8 +88,9 @@ class NexropsyController extends Controller
      * @param  \App\nexropsy  $nexropsy
      * @return \Illuminate\Http\Response
      */
-    public function destroy(nexropsy $nexropsy)
+    public function destroy(nexropsy $necropsy)
     {
-        //
+        $necropsy->delete();
+        return back();
     }
 }

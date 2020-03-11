@@ -14,7 +14,8 @@ class ClinicalSignController extends Controller
      */
     public function index()
     {
-        return view('prescription.sign' );
+        $signs= clinicalSign:: all();
+        return view('prescription.sign',compact('signs') );
     }
 
     /**
@@ -35,7 +36,12 @@ class ClinicalSignController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sign = new clinicalSign;
+
+        $sign->name= $request->name;
+        $sign->description = $request->description;
+        $sign->save();
+        return back();
     }
 
     /**
@@ -69,7 +75,10 @@ class ClinicalSignController extends Controller
      */
     public function update(Request $request, clinicalSign $clinicalSign)
     {
-        //
+        $clinicalSign->name= $request->name;
+        $clinicalSign->description = $request->description;
+        $clinicalSign->save();
+        return back();
     }
 
     /**
@@ -80,6 +89,7 @@ class ClinicalSignController extends Controller
      */
     public function destroy(clinicalSign $clinicalSign)
     {
-        //
+        $clinicalSign->delete();
+        return back();
     }
 }
