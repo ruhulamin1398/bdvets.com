@@ -23,6 +23,9 @@ class UsersTableSeeder extends Seeder
             [
                 'role' => 'pharmacy'
             ],
+            [
+                'role' => 'user'
+            ],
 
         ]);
         DB::table('users')->insert([

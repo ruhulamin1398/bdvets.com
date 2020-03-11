@@ -18,7 +18,13 @@ class OfficeController extends Controller
         $divisions = division::all();
         return view("office.index",compact('divisions'));
     }
+    public function officeListApi()
+    {
+        $offices = office::all();
     
+        return $offices;
+    
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -59,7 +59,7 @@
       // on modal hide
       $('#medichine-edit-modal').on('hide.bs.modal', function() {
         $('.edit-item-trigger-clicked').removeClass('edit-item-trigger-clicked')
-        $("#edit-form").trigger("reset");
+        $("#medichine-edit-form").trigger("reset");
       });
 
   }) ;
