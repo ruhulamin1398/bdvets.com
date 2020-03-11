@@ -14,7 +14,8 @@ class DiagnosisController extends Controller
      */
     public function index()
     {
-        //
+        
+        return view('prescription.diagnosis' );
     }
 
     /**

@@ -14,7 +14,7 @@ class NexropsyController extends Controller
      */
     public function index()
     {
-        //
+        return view('prescription.necropsy' );
     }
 
     /**

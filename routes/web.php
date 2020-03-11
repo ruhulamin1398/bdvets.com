@@ -26,6 +26,11 @@ Route::resource('medichines', 'MedichineController');
 Route::resource('medichine-categories', 'MedichineCategoryController');
 
 
+Route::resource('advices', 'AdviceController');
+Route::resource('clinical-signs', 'ClinicalSignController');
+Route::resource('necropsy', 'NexropsyController');
+Route::resource('diagnosis', 'DiagnosisController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

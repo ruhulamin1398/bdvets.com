@@ -14,7 +14,7 @@ class ClinicalSignController extends Controller
      */
     public function index()
     {
-        //
+        return view('prescription.sign' );
     }
 
     /**
