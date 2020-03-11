@@ -19,6 +19,7 @@ Route::post("/village-store","LocationController@villageStore")->name('village-s
 
 
 Route::resource('offices', 'OfficeController');
+Route::resource('doctors', 'DoctorController');
 
 Route::resource('farmers', 'FarmerController');
 Route::resource('medichines', 'MedichineController');
@@ -48,3 +49,4 @@ Route::get('village_list_api', 'LocationController@villageListApi')->name('villa
 
 Route::get('village_farmer_list_api', 'FarmerController@villageFarmerListApi')->name('village_farmer_list_api');
 Route::get('medichine_category_list_api', 'MedichineCategoryController@medichineCategoryListApi')->name('medichine_category_list_api');
+Route::get('office_list_api', 'OfficeController@officeListApi')->name('office_list_api');

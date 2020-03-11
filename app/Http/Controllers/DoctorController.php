@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\doctor;
+use App\office;
+use App\role;
+use App\User;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
@@ -15,7 +18,14 @@ class DoctorController extends Controller
     public function index()
     {
         //
+        //return doctor::find(1)->user->id;
+        $doctors= doctor::all();  
+        $offices=office::all();
+        $users=User::all();  
+       // return $doctors;
+        return view('doctor.index',compact('doctors','offices','users'));
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -36,6 +46,17 @@ class DoctorController extends Controller
     public function store(Request $request)
     {
         //
+        $doctor = new doctor;
+        $doctor->user_id= $request->user_id;
+        $doctor->office_id= $request->office_id;
+
+        $user= User:: find($request->user_id);
+        $user->role_id=2;
+        $user ->save();
+
+        $doctor->save();
+        return back();
+
     }
 
     /**
@@ -69,7 +90,11 @@ class DoctorController extends Controller
      */
     public function update(Request $request, doctor $doctor)
     {
-        //
+    
+
+        $doctor->office_id= $request->office_id;
+        $doctor->save();
+        return back();
     }
 
     /**
@@ -80,6 +105,11 @@ class DoctorController extends Controller
      */
     public function destroy(doctor $doctor)
     {
-        //
+       $doctor ->delete();
+       
+       $user= User:: find($doctor->user_id);
+       $user->role_id=4;
+       $user ->save();
+       return back();
     }
 }

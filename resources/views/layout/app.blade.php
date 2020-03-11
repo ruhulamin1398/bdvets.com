@@ -82,6 +82,7 @@
     <script src="{{asset('js/custom/farmer.js')}}"></script>
     <script src="{{asset('js/custom/medichine.js')}}"></script>
     <script src="{{asset('js/custom/category.js')}}"></script>
+    <script src="{{asset('js/custom/doctor.js')}}"></script>
 
 
 

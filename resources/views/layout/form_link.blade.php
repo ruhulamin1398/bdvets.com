@@ -14,6 +14,7 @@
 <input type="text"  id="village_list_api" value="{{route('village_list_api')}}" hidden >
 <input type="text"  id="village_farmer_list_api" value="{{route('village_farmer_list_api')}}" hidden >
 <input type="text"  id="medichine_category_list_api" value="{{route('medichine_category_list_api')}}" hidden >
+<input type="text"  id="office_list_api" value="{{route('office_list_api')}}" hidden >
 
 
 <input type="text"  id="farmerShow" value="{{route('farmers.show',['farmer'=>0])}}" hidden >
