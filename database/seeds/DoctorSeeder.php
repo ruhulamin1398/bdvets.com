@@ -14,14 +14,15 @@ class DoctorSeeder extends Seeder
         DB::table('offices')->insert([
             [
                 'name' => 'habiganj upzilla Office',
+                'bn_name' => 'habiganj upzilla Office',
                 'email' => 'habiganj.gmail.com',
-                'about' => '
+                'address' => '
                      lorem  Lorem ipsum, dolor sit am
-                    et consectetur adipisicing elit. Quae minima eos, repellat, cum blanditiis aute
-                    m praesentium sit aperiam in dolor 
-                    provident ipsam tempora asperiores! Quasi officiis nostrum sequi error excepturi 
-                    mollitia, earum qui possimus doloremque quas quos obcaecati dolorum dolores?
-                     Tenetur tempore sed, accusamus ipsam sit omnis illum placeat doloremque?
+                    et consectetur adipisicing elit
+                 ',
+                'bn_address' => '
+                     lorem  Lorem ipsum, dolor sit am
+                    et consectetur adipisicing elit
                  ',
 
                 'phone' => '018452656556',
