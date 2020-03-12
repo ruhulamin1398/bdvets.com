@@ -14,7 +14,8 @@ class AdviceController extends Controller
      */
     public function index()
     {
-        return view('prescription.advice' );
+        $advices= advice:: all();
+        return view('prescription.advice',compact('advices') );
     }
 
     /**
@@ -35,7 +36,12 @@ class AdviceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $advice = new advice;
+
+        $advice->name= $request->name;
+        $advice->description = $request->description;
+        $advice->save();
+        return back();
     }
 
     /**
@@ -69,7 +75,10 @@ class AdviceController extends Controller
      */
     public function update(Request $request, advice $advice)
     {
-        //
+        $advice->name= $request->name;
+        $advice->description = $request->description;
+        $advice->save();
+        return back();
     }
 
     /**
@@ -80,6 +89,7 @@ class AdviceController extends Controller
      */
     public function destroy(advice $advice)
     {
-        //
+        $advice->delete();
+        return back();
     }
 }
