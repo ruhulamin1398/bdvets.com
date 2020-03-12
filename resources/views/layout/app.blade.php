@@ -87,6 +87,7 @@
     <script src="{{asset('js/custom/sign.js')}}"></script>
     <script src="{{asset('js/custom/diagnosis.js')}}"></script>
     <script src="{{asset('js/custom/necropsy.js')}}"></script>
+    <script src="{{asset('js/custom/advice.js')}}"></script>
 
 
 
