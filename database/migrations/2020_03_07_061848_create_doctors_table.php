@@ -20,6 +20,7 @@ class CreateDoctorsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('office_id');
             $table->string('designation');
+            $table->string('bn_designation');
             $table->timestamps();
 
 

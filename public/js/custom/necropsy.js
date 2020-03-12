@@ -23,7 +23,7 @@ $(document).ready(function(){
         var description = row.children(".description").text();
 
 
-        var action= $("#indexLink").val()+'/necropsy/'+id;
+        var action= $("#indexLink").val()+'/necropsies/'+id;
         $("#necropsy-edit-form").attr('action',action);
 
         // fill the data in the input fields

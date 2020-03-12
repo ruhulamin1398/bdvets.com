@@ -20,6 +20,7 @@ Route::post("/village-store","LocationController@villageStore")->name('village-s
 
 Route::resource('offices', 'OfficeController');
 Route::resource('doctors', 'DoctorController');
+Route::resource('doctor-profiles', 'DoctorProfileController');
 
 Route::resource('farmers', 'FarmerController');
 Route::resource('medichines', 'MedichineController');
@@ -28,8 +29,8 @@ Route::resource('medichine-categories', 'MedichineCategoryController');
 
 Route::resource('advices', 'AdviceController');
 Route::resource('clinical-signs', 'ClinicalSignController');
-Route::resource('necropsy', 'NecropsyController');
-Route::resource('diagnosis', 'DiagnosisController');
+Route::resource('necropsies', 'NecropsyController');
+Route::resource('diagnoses', 'DiagnosisController');
 
 Auth::routes();
 

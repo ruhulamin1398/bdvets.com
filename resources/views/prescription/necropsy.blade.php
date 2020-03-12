@@ -18,7 +18,7 @@
             </div>
 
             <div class="card-body">
-                <form method="POST" action="{{ route('necropsy.store') }}">
+                <form method="POST" action="{{ route('necropsies.store') }}">
                     @csrf
                     <div class="form-row align-items-center">
                         <div class="col-auto">
@@ -92,7 +92,7 @@
                                     <button type="button" class="btn btn-success" id="necropsy-edit-item" data-item-id={{$id}}> <i class="fa fa-edit" aria-hidden="false"> </i></button>
 
 
-                                    <form method="POST" action="{{ route('necropsy.destroy',  $necropsy->id )}} " id="delete-form-{{ $necropsy->id }}" style="display:none; ">
+                                    <form method="POST" action="{{ route('necropsies.destroy',  $necropsy->id )}} " id="delete-form-{{ $necropsy->id }}" style="display:none; ">
                                         {{csrf_field() }}
                                         {{ method_field("delete") }}
                                     </form>

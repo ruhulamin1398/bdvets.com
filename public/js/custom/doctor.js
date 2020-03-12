@@ -23,6 +23,7 @@ $(document).ready(function(){
         var name = row.children(".name").text();
         var officeName = row.children(".office").text();
         var designation = row.children(".designation").text();
+        var bn_designation = row.children(".bn_designation").text();
 
 
         var action= $("#indexLink").val()+'/doctors/'+id;
@@ -32,6 +33,7 @@ $(document).ready(function(){
         $("#doctor-modal-input-id").val(id);
         $("#doctor-modal-input-name").val(name);
         $("#doctor-modal-input-designation").val(designation);
+        $("#doctor-modal-input-bn_designation").val(bn_designation);
        
  
 

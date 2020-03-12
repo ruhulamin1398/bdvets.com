@@ -69,8 +69,8 @@
         <div class="bg-white py-2 collapse-inner rounded">
 
         <a class="collapse-item" href="{{ route('clinical-signs.index') }}">Clinical Signs</a>
-          <a class="collapse-item" href="{{ route('diagnosis.index') }}">Tentative Diagnosis</a>
-          <a class="collapse-item" href="{{ route('necropsy.index') }}">Necropsy</a>
+          <a class="collapse-item" href="{{ route('diagnoses.index') }}">Tentative Diagnosis</a>
+          <a class="collapse-item" href="{{ route('necropsies.index') }}">Necropsy</a>
           <a class="collapse-item" href="{{ route('advices.index') }}">Advices</a>
 
         </div>
@@ -93,7 +93,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item  ">
-      <a class="nav-link p-3 " href="index">
+      <a class="nav-link p-3 " href="{{route('doctor-profiles.edit',Auth::user()->id )}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Profile</span></a>
     </li>

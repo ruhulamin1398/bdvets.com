@@ -14,16 +14,18 @@ class CreateDoctorProfilesTable extends Migration
     public function up()
     {
         Schema::create('doctor_profiles', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id')->unique();
-            $table->string('name');
-            $table->string('bn_name');
-            $table->string('phone');
-            $table->string('degree_varsity');
-            $table->string('reg_no');
+
+            $table->unsignedBigInteger('id');
+            $table->string('name')->nullable();
+            $table->string('bn_name')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('degree_varsity')->nullable();
+            $table->string('bn_degree_varsity')->nullable();
+            $table->string('reg_no')->nullable();
 
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('id')->references('id')->on('users');
+            $table->primary('id');
         });
     }
 

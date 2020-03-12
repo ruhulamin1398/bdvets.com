@@ -75,11 +75,11 @@ class DiagnosisController extends Controller
      * @param  \App\diagnosis  $diagnosis
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, diagnosis $diagnosi)
+    public function update(Request $request, diagnosis $diagnosis)
     {
-        $diagnosi->name= $request->name;
-        $diagnosi->description = $request->description;
-        $diagnosi->save();
+        $diagnosis->name= $request->name;
+        $diagnosis->description = $request->description;
+        $diagnosis->save();
         return back();
     }
 
@@ -89,11 +89,11 @@ class DiagnosisController extends Controller
      * @param  \App\diagnosis  $diagnosis
      * @return \Illuminate\Http\Response
      */
-    public function destroy(diagnosis $diagnosi)
+    public function destroy(diagnosis $diagnosis)
     {
        
        
-        $diagnosi->delete();
+        $diagnosis->delete();
         return back();
     }
 }
