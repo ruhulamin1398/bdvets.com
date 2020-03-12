@@ -14,7 +14,9 @@ class CreateDoctorsTable extends Migration
     public function up()
     {
         Schema::create('doctors', function (Blueprint $table) {
+            
 
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('office_id');
             $table->string('designation');
@@ -23,7 +25,6 @@ class CreateDoctorsTable extends Migration
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('office_id')->references('id')->on('offices');
-            $table->primary('user_id','office_id');
         });
     }
 
