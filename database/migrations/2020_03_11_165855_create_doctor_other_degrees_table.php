@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNexropsiesTable extends Migration
+class CreateDoctorOtherDegreesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateNexropsiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('nexropsies', function (Blueprint $table) {
+        Schema::create('doctor_other_degrees', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->unique();
-            $table->string('description')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->string('degree');
+            $table->string('bn_degree');
+
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -28,6 +31,6 @@ class CreateNexropsiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nexropsies');
+        Schema::dropIfExists('doctor_other_degrees');
     }
 }

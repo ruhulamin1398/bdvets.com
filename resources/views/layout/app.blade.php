@@ -11,6 +11,7 @@
 
     <title>Bdvets.com </title>
 
+    <link href="{{asset('css/chosen.min.css')}}" rel="stylesheet" type="text/css">
     <!-- Custom fonts for this template-->
     <link href="{{asset('file/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 
@@ -89,6 +90,12 @@
 
 
 
+
+
+    <script type="text/javascript">
+        $(".chosen").chosen();
+
+    </script>
 
 
 </body>

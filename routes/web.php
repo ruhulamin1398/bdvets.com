@@ -28,7 +28,7 @@ Route::resource('medichine-categories', 'MedichineCategoryController');
 
 Route::resource('advices', 'AdviceController');
 Route::resource('clinical-signs', 'ClinicalSignController');
-Route::resource('necropsy', 'NexropsyController');
+Route::resource('necropsy', 'NecropsyController');
 Route::resource('diagnosis', 'DiagnosisController');
 
 Auth::routes();
@@ -55,3 +55,9 @@ Route::get('village_list_api', 'LocationController@villageListApi')->name('villa
 Route::get('village_farmer_list_api', 'FarmerController@villageFarmerListApi')->name('village_farmer_list_api');
 Route::get('medichine_category_list_api', 'MedichineCategoryController@medichineCategoryListApi')->name('medichine_category_list_api');
 Route::get('office_list_api', 'OfficeController@officeListApi')->name('office_list_api');
+
+
+
+
+
+Route::resource('test', 'TestController');

@@ -16,11 +16,13 @@ class CreateOfficesTable extends Migration
         Schema::create('offices', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string("name");
+            $table->string("bn_name");
             $table->string("email")->nullable()-> unique();
             $table->string("phone")->nullable()-> unique();
-            $table->string("about",1000)->nullable();;
+            $table->string("address",1000);
+            $table->string("bn_address",1000);
             $table->timestamps();
-            
+
             $table->unsignedBigInteger('division_id')->nullable();
             $table->unsignedBigInteger('district_id')->nullable();
             $table->unsignedBigInteger('upazilla_id')->nullable();

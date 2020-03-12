@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\nexropsy;
+use App\doctorProfile;
 use Illuminate\Http\Request;
 
-class NexropsyController extends Controller
+class DoctorProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class NexropsyController extends Controller
      */
     public function index()
     {
-        
-        $necropsyes= nexropsy:: all();
-        return view('prescription.necropsy',compact('necropsyes') );
+        //
     }
 
     /**
@@ -37,21 +35,16 @@ class NexropsyController extends Controller
      */
     public function store(Request $request)
     {
-        $nexrops = new nexropsy;
-        
-        $nexrops->name= $request->name;
-        $nexrops->description = $request->description;
-        $nexrops->save();
-        return back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\nexropsy  $nexropsy
+     * @param  \App\doctorProfile  $doctorProfile
      * @return \Illuminate\Http\Response
      */
-    public function show(nexropsy $nexropsy)
+    public function show(doctorProfile $doctorProfile)
     {
         //
     }
@@ -59,10 +52,10 @@ class NexropsyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\nexropsy  $nexropsy
+     * @param  \App\doctorProfile  $doctorProfile
      * @return \Illuminate\Http\Response
      */
-    public function edit(nexropsy $nexropsy)
+    public function edit(doctorProfile $doctorProfile)
     {
         //
     }
@@ -71,26 +64,22 @@ class NexropsyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\nexropsy  $nexropsy
+     * @param  \App\doctorProfile  $doctorProfile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, nexropsy $necropsy)
+    public function update(Request $request, doctorProfile $doctorProfile)
     {
-        $necropsy->name= $request->name;
-        $necropsy->description = $request->description;
-        $necropsy->save();
-        return back();
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\nexropsy  $nexropsy
+     * @param  \App\doctorProfile  $doctorProfile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(nexropsy $necropsy)
+    public function destroy(doctorProfile $doctorProfile)
     {
-        $necropsy->delete();
-        return back();
+        //
     }
 }
