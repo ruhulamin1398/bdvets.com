@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
     $(document).on('click', "#doctor-edit-item", function() {
 
 
@@ -20,7 +21,8 @@ $(document).ready(function(){
         // get the data
         var id = el.data('item-id');
         var name = row.children(".name").text();
-          var officeName = row.children(".office").text();
+        var officeName = row.children(".office").text();
+        var designation = row.children(".designation").text();
 
 
         var action= $("#indexLink").val()+'/doctors/'+id;
@@ -29,6 +31,8 @@ $(document).ready(function(){
         // fill the data in the input fields
         $("#doctor-modal-input-id").val(id);
         $("#doctor-modal-input-name").val(name);
+        $("#doctor-modal-input-designation").val(designation);
+       
  
 
 
