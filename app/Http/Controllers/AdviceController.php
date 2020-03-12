@@ -14,7 +14,7 @@ class AdviceController extends Controller
      */
     public function index()
     {
-        //
+        return view('prescription.advice' );
     }
 
     /**

@@ -84,6 +84,9 @@
     <script src="{{asset('js/custom/medichine.js')}}"></script>
     <script src="{{asset('js/custom/category.js')}}"></script>
     <script src="{{asset('js/custom/doctor.js')}}"></script>
+    <script src="{{asset('js/custom/sign.js')}}"></script>
+    <script src="{{asset('js/custom/diagnosis.js')}}"></script>
+    <script src="{{asset('js/custom/necropsy.js')}}"></script>
 
 
 
