@@ -16,7 +16,7 @@ class DoctorProfileController extends Controller
      */
     public function index()
     {
-
+           // return doctorProfile::find(1)->other_degrees;
     }
 
     /**
