@@ -19,6 +19,10 @@ class CreateDoctorsTable extends Migration
             $table->unsignedBigInteger('office_id');
             $table->string('designation');
             $table->timestamps();
+
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('office_id')->references('id')->on('offices');
         });
     }
 

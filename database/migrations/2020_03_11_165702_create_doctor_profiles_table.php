@@ -15,6 +15,7 @@ class CreateDoctorProfilesTable extends Migration
     {
         Schema::create('doctor_profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id')->unique();
             $table->string('name');
             $table->string('bn_name');
             $table->string('phone');
@@ -22,6 +23,7 @@ class CreateDoctorProfilesTable extends Migration
             $table->string('reg_no');
 
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

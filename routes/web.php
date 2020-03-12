@@ -28,7 +28,7 @@ Route::resource('medichine-categories', 'MedichineCategoryController');
 
 Route::resource('advices', 'AdviceController');
 Route::resource('clinical-signs', 'ClinicalSignController');
-Route::resource('necropsy', 'NexropsyController');
+Route::resource('necropsy', 'NecropsyController');
 Route::resource('diagnosis', 'DiagnosisController');
 
 Auth::routes();

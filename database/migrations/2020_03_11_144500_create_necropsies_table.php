@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNexropsiesTable extends Migration
+class CreateNecropsiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateNexropsiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('nexropsies', function (Blueprint $table) {
+        Schema::create('necropsies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->unique();
             $table->string('description')->nullable();
@@ -28,6 +28,6 @@ class CreateNexropsiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nexropsies');
+        Schema::dropIfExists('necvopsies');
     }
 }

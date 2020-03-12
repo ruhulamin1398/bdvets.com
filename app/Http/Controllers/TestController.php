@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\doctor;
 use App\test;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,7 @@ class TestController extends Controller
      */
     public function index()
     {
+        return  doctor::find(1)->otherDegrees;
        return view('index');
     }
 
