@@ -15,8 +15,8 @@ $(document).ready(function(){
                 html+= '<td>'
                  
                 
-                +' <button type="button" class="btn btn-success " id="edit-product-button" > <a href='+  $("#farmerShow").val()+ id+   ' > <i class="fa fa-eye text-light" aria-hidden="false"> </i> </a></button>'
-                +' <button type="button" class="btn btn-success" id="edit-product-button" > <a href='+  $("#indexLink").val()+'/farmers/'+id+'/edit'+   '> <i class="fa fa-edit text-light" aria-hidden="false"> </i> </a></button>'
+                +' <button type="button" class="btn btn-success " id="edit-product-button" > <a href='+ $("#indexLink").val()+'/farmers/'+farmers[i].id + ' > <i class="fa fa-eye text-light" aria-hidden="false"> </i> </a></button>'
+                +' <button type="button" class="btn btn-success" id="edit-product-button" > <a href='+  $("#indexLink").val()+'/farmers/'+farmers[i].id+'/edit'+   '> <i class="fa fa-edit text-light" aria-hidden="false"> </i> </a></button>'
 
 
         
