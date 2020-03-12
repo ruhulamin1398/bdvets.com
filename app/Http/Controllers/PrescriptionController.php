@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\doctor;
-use App\test;
+use App\prescription;
 use Illuminate\Http\Request;
 
-class TestController extends Controller
+class PrescriptionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,9 @@ class TestController extends Controller
      */
     public function index()
     {
-       return view('index');
+        //
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -35,16 +35,16 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\test  $test
+     * @param  \App\prescription  $prescription
      * @return \Illuminate\Http\Response
      */
-    public function show(test $test)
+    public function show(prescription $prescription)
     {
         //
     }
@@ -52,10 +52,10 @@ class TestController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\test  $test
+     * @param  \App\prescription  $prescription
      * @return \Illuminate\Http\Response
      */
-    public function edit(test $test)
+    public function edit(prescription $prescription)
     {
         //
     }
@@ -64,10 +64,10 @@ class TestController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\test  $test
+     * @param  \App\prescription  $prescription
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, test $test)
+    public function update(Request $request, prescription $prescription)
     {
         //
     }
@@ -75,10 +75,10 @@ class TestController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\test  $test
+     * @param  \App\prescription  $prescription
      * @return \Illuminate\Http\Response
      */
-    public function destroy(test $test)
+    public function destroy(prescription $prescription)
     {
         //
     }
