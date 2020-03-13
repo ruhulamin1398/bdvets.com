@@ -50,6 +50,7 @@ class DoctorController extends Controller
         $doctor->user_id= $request->user_id;
         $doctor->office_id= $request->office_id;
         $doctor->designation= $request->designation;
+        $doctor->bn_designation= $request->bn_designation;
         
         $user= User:: find($request->user_id);
         $user->role_id=2;
@@ -95,6 +96,7 @@ class DoctorController extends Controller
 
         $doctor->office_id= $request->office_id;
         $doctor->designation= $request->designation;
+        $doctor->bn_designation= $request->bn_designation;
         $doctor->save();
         return back();
     }

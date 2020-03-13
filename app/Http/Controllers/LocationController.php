@@ -31,7 +31,10 @@ class LocationController extends Controller
 
 
     }
+public function villageDelete(Request $request){
+    village::find($request->id)->delete();
 
+}
     
     public function divisionListApi(){
         return division::all();

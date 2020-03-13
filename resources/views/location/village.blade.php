@@ -44,7 +44,7 @@
 
 
                         <div class="form-group">
-                            <label for="bn_name">BN Name</label>
+                            <label for="bn_name">Name(Bangla)</label>
                             <input type="text" class="form-control form-control" name="bn_name" id="bn_name" required>
                         </div>
 
@@ -90,8 +90,8 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>BN_Name</th>
-                                    <th>URL</th>
+                                    <th>Name(Bangla)</th>
+                                    <th>Action</th>
                                     <!-- <th>Action</th> -->
                                 </tr>
                             </thead>
@@ -99,8 +99,8 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>BN_Name</th>
-                                    <th>URL</th>
+                                    <th>Name(Bangla)</th>
+                                    <th>Action</th>
                                     <!-- <th>Action</th> -->
                                 </tr>
 

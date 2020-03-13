@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\doctor;
 use App\doctorProfile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DoctorProfileController extends Controller
 {
@@ -14,7 +16,7 @@ class DoctorProfileController extends Controller
      */
     public function index()
     {
-        //
+           // return doctorProfile::find(1)->other_degrees;
     }
 
     /**
@@ -46,7 +48,8 @@ class DoctorProfileController extends Controller
      */
     public function show(doctorProfile $doctorProfile)
     {
-        //
+        
+      
     }
 
     /**
@@ -57,7 +60,8 @@ class DoctorProfileController extends Controller
      */
     public function edit(doctorProfile $doctorProfile)
     {
-        //
+      
+       return view('doctor.profile',compact('doctorProfile'));
     }
 
     /**
@@ -69,7 +73,16 @@ class DoctorProfileController extends Controller
      */
     public function update(Request $request, doctorProfile $doctorProfile)
     {
-        //
+        $doctorProfile->name= $request->name;
+        $doctorProfile->bn_name= $request->bn_name;
+        $doctorProfile->phone= $request->phone;
+        $doctorProfile->degree_varsity= $request->degree_varsity;
+        $doctorProfile->bn_degree_varsity= $request->bn_degree_varsity;
+        $doctorProfile->reg_no= $request->reg_no;
+
+
+        $doctorProfile->save();
+        return back();
     }
 
     /**

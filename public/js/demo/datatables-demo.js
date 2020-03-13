@@ -4,6 +4,8 @@ $(document).ready(function() {
   $('#dataTable2').DataTable();
   $('#farmerTable').DataTable();
   $('#villageTable').DataTable();
+  $("#officeTable").DataTable(); 
+          
 });
 
 

@@ -49,10 +49,17 @@
                 <div class="col-auto">
 
                     <span class="text-dark pl-2">Designation</span>
-                    <input type="text" name="designation" size="55" class="form-control mb-2" id="inlineFormInput"
+                    <input type="text" name="designation" size="55" class="form-control mb-2"  
                         required>
                 </div>
 
+
+                <div class="col-auto">
+
+                    <span class="text-dark pl-2">Designation(Bangla)</span>
+                    <input type="text" name="bn_designation" size="55" class="form-control mb-2"  
+                        required>
+                </div>
 
                 <div class="col-auto">
                     <button type="submit" class="btn btn-primary mt-3">Submit</button>
@@ -86,6 +93,7 @@
                             <th>Name</th>
                             <th>Office</th>
                             <th>Designation</th>
+                            <th>Designation(Bangla)</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -96,6 +104,7 @@
                             <th>Name</th>
                             <th>Office</th>
                             <th>Designation</th>
+                            <th>Designation(Bangla)</th>
                             <th>Action</th>
 
                         </tr>
@@ -111,6 +120,7 @@
                             <td class="  word-break name">{{$doctor->user->name}}</td>
                             <td class="  word-break office">{{$doctor->office->name}}</td>
                             <td class="  word-break designation">{{$doctor->designation}}</td>
+                            <td class="  word-break bn_designation">{{$doctor->bn_designation}}</td>
 
 
 
@@ -206,6 +216,12 @@
                     <div class="form-group">
                         <label class="col-form-label" for="doctor-modal-input-designation">Designation</label>
                         <input type="text" name="designation" class="form-control" id="doctor-modal-input-designation"
+                            required autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="doctor-modal-input-bn_designation">Designation(Bangla)</label>
+                        <input type="text" name="bn_designation" class="form-control" id="doctor-modal-input-bn_designation"
                             required autofocus>
                     </div>
 

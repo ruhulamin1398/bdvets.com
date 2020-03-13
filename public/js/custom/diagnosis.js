@@ -23,7 +23,7 @@ $(document).ready(function(){
         var description = row.children(".description").text();
 
 
-        var action= $("#indexLink").val()+'/diagnosis/'+id;
+        var action= $("#indexLink").val()+'/diagnoses/'+id;
         $("#diagnosis-edit-form").attr('action',action);
 
         // fill the data in the input fields

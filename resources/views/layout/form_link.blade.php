@@ -1,5 +1,6 @@
 
 <input type="text"  id="indexLink" value="{{route('index')}}" hidden >
+<input type="text"  id="village_delete" value="{{route('village-delete')}}" hidden >
 
 
 
