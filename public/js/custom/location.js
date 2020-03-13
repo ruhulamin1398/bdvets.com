@@ -44,7 +44,7 @@ $(document).ready(function () {
 
         $.get(link, function (upazills, status) {
             console.log(upazills);
-            var html = '<option  value="" >Select district </option>';
+            var html = '<option  value="" >Select Upazilla </option>';
             jQuery.each(upazills, function (i) {
                 console.log(upazills[i].name);
 

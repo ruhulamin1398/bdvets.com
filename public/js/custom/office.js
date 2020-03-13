@@ -19,7 +19,7 @@ $(document).ready(function () {
                 html += ' <td > ' + temp ++ + '</td>';
                 html += ' <td class="name" > ' + offices[i].name + '</td>';
                 html += ' <td class="phone" > ' + offices[i].phone + '</td>';
-                html += ' <td >  <button type="button" class="btn btn-success" id="edit-office-button" data-office-id='+offices[i].id+'> <i class="fa fa-edit" aria-hidden="false"> </i></button></td>';
+                html += ' <td > <button type="button" class="btn btn-success" id="edit-product-button" > <a href='+  $("#indexLink").val()+'/offices/'+offices[i].id+'/edit'+   '> <i class="fa fa-edit text-light" aria-hidden="false"> </i> </a></button>   </td>';
                  html += '</tr>';
             });
             

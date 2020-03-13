@@ -17,6 +17,8 @@ Route::get("/","UserController@index")->name('index');
 Route::get("/village","LocationController@village")->name('village');
 Route::post("/village-store","LocationController@villageStore")->name('village-store');
 
+Route::get("/village-delete","LocationController@villageDelete")->name('village-delete');
+
 
 Route::resource('offices', 'OfficeController');
 Route::resource('doctors', 'DoctorController');

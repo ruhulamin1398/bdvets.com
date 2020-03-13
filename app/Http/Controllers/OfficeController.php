@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\district;
+use App\upazilla;
 use App\office;
 use App\division;
 use Illuminate\Http\Request;
@@ -80,7 +82,12 @@ class OfficeController extends Controller
      */
     public function edit(office $office)
     {
-        //
+        $divisions = division::all();
+        $districts= district::where("division_id",$office->division_id)->get();
+        $upazillas= upazilla::where("district_id",$office->district_id)->get();
+//
+        
+        return view('office.edit', compact('office','divisions', 'districts' , 'upazillas'));
     }
 
     /**
