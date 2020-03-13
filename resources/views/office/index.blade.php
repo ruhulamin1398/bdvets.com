@@ -10,7 +10,7 @@
         <!-- main body start -->
         <div class="col-xl-8 col-lg-8 col-md-8   ">
 
-            <div class="card mb-4 shadow collapse" id="villageStore">
+            <div class="card mb-4 shadow collapse" id="officeStore">
 
 
                 <div class="card-header py-3 bg-abasas-dark">
@@ -31,43 +31,49 @@
                         @csrf
 
 
-                        <input type="text" class="form-control form-control" name="division_id" id="setDivision" hidden required>
-                        <input type="text" class="form-control form-control" name="district_id" id="setDistrict" hidden required>
-                        <input type="text" class="form-control form-control" name="upazilla_id" id="setUpazilla" hidden required>
-                        <input type="text" class="form-control form-control" name="union_id" id="setUnion" hidden required>
-                        <input type="text" class="form-control form-control" name="village_id" id="setVillage" hidden required>
+                        <input type="text" class="form-control form-control" name="division_id" id="setDivision" hidden
+                            required>
+                        <input type="text" class="form-control form-control" name="district_id" id="setDistrict" hidden
+                            required>
+                        <input type="text" class="form-control form-control" name="upazilla_id" id="setUpazilla" hidden
+                            required>
+                        <!-- <input type="text" class="form-control form-control" name="union_id" id="setUnion" hidden required>
+                        <input type="text" class="form-control form-control" name="office_id" id="setVillage" hidden required> -->
 
 
-                        
+
 
                         <div class="form-row align-items-center">
 
                         <div class="form-group col-12 ">
-                                <label for="name"    class="text-dark pl-2" >Office Name</label>
+                                <label for="name" class="text-dark pl-2">Office Name</label>
                                 <input type="text" class="form-control form-control    mb-2  " name="name" required>
                             </div>
 
+                            <div class="form-group col-12 ">
+                                <label for="bn_name" class="text-dark pl-2">Office Name (Bangla)</label>
+                                <input type="text" class="form-control form-control    mb-2  " name="bn_name" required>
+                            </div>
+
 
                             <div class="form-group  col-12 ">
-                                <label for="email"    class="text-dark pl-2" >Email</label>
+                                <label for="email" class="text-dark pl-2">Email</label>
                                 <input type="email" class="form-control form-control    mb-2  " name="email">
                             </div>
                             <div class="form-group  col-12 ">
-                                <label for="phone"    class="text-dark pl-2" >Phone</label>
+                                <label for="phone" class="text-dark pl-2">Phone</label>
                                 <input type="phone" class="form-control form-control    mb-2  " name="phone">
                             </div>
-
-
+                            
                             <div class="form-group  col-12 ">
-                                <label for="about"    class="text-dark pl-2" >About</label>
-                                <textarea type="about" class="form-control form-control    mb-2  " name="about" size=100></textarea>
+                                <label for="address" class="text-dark pl-2">Address</label>
+                                <input type="text" class="form-control form-control    mb-2  " name="address">
                             </div>
 
-
-                      
-
-
-                           
+                            <div class="form-group  col-12 ">
+                                <label for="bn_address" class="text-dark pl-2">Address(Bangla)</label>
+                                <input type="text" class="form-control form-control    mb-2  " name="bn_address">
+                            </div>
 
 
 
@@ -93,19 +99,22 @@
                 <div class="card-header py-3 bg-abasas-dark">
                     <nav class="navbar navbar-dark ">
                         <a class="navbar-brand"> Office List</a>
-                        <button class="btn btn-success" data-toggle="collapse" href="#villageStore"> New Farmer</button>
+                        <button class="btn btn-success" data-toggle="collapse" href="#officeStore"> New Office</button>
 
                     </nav>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered " id="farmerTable" width="100%" cellspacing="0">
+                        <table class="table table-striped table-bordered " id="farmerTable" width="100%"
+                            cellspacing="0">
                             <thead class="bg-abasas-dark">
 
 
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Action</th>
                                     <!-- <th>Action</th> -->
                                 </tr>
                             </thead>
@@ -113,11 +122,13 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Action</th>
                                     <!-- <th>Action</th> -->
                                 </tr>
 
                             </tfoot>
-                            <tbody id='farmerTableData'>
+                            <tbody id='upazila_office_table_data'>
 
 
                             </tbody>
@@ -176,12 +187,12 @@
 
                     <div class="form-group">
                         <label for="upazilla_id">Upazilla</label>
-                        <select class="form-control form-control" name="upazilla_id" id="upazilla_id" required>
+                        <select class="form-control form-control office_upazilla" name="upazilla_id" id="upazilla_id" required>
                             <option value="">Select Upazilla </option>
 
                         </select>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="union_id">Union</label>
                         <select class="form-control form-control" id="union_id" required>
                             <option value="">Select Union </option>
@@ -189,12 +200,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="village_id">Villlage</label>
-                        <select class="form-control form-control" id="village_id" required>
+                        <label for="office_id">Villlage</label>
+                        <select class="form-control form-control" id="office_id" required>
                             <option value="">Select Union </option>
 
                         </select>
-                    </div>
+                    </div> -->
 
 
 
@@ -204,12 +215,14 @@
     </div>
 
     <!-- Content Modal  -->
-    <div class="modal fade" id="village-edit-modal" tabindex="-1" role="dialog" aria-labelledby="edit-modal-label" aria-hidden="true">
+    <div class="modal fade" id="office-edit-modal" tabindex="-1" role="dialog" aria-labelledby="edit-modal-label"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title text-dark" id="edit-modal-label ">Edit</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body" id="attachment-body-content">
@@ -221,29 +234,49 @@
                         <!-- id -->
                         <div class="form-group">
                             <label class="col-form-label" for="modal-input-id">Id </label>
-                            <input type="text" name="id" class="form-control" id="modal-village-id" required readonly>
+                            <input type="text" name="id" class="form-control" id="modal-office-id" required readonly>
                         </div>
                         <!-- /id -->
                         <!-- name -->
                         <div class="form-group">
                             <label class="col-form-label" for="modal-input-name">Name</label>
-                            <input type="text" name="name" class="form-control" id="modal-village-name" required autofocus>
+                            <input type="text" name="name" class="form-control" id="modal-office-name" required
+                                autofocus>
                         </div>
                         <!-- /name -->
                         <div class="form-group">
-                            <label class="col-form-label" for="modal-input-name">BN Name</label>
-                            <input type="text" name="bn_name" class="form-control" id="modal-village-bn_name" required autofocus>
+                            <label class="col-form-label" for="modal-input-bn_name">Name(Bangla)</label>
+                            <input type="text" name="bn_name" class="form-control" id="modal-office-bn_name" required
+                                autofocus>
                         </div>
                         <!-- /name -->
                         <div class="form-group">
-                            <label class="col-form-label" for="modal-input-name">Url</label>
-                            <input type="text" name="url" class="form-control" id="modal-village-url" required autofocus>
+                            <label class="col-form-label" for="modal-input-email">Email</label>
+                            <input type="email" name="email" class="form-control" id="modal-office-email" required autofocus>
                         </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label" for="modal-input-phone">Phone</label>
+                            <input type="text" name="phone" class="form-control" id="modal-office-phone" required autofocus>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label" for="modal-input-address">Address</label>
+                            <input type="text" name="address" class="form-control" id="modal-office-address" required autofocus>
+                        </div>
+
+
+                        
+                        <div class="form-group">
+                            <label class="col-form-label" for="modal-input-bn_address">Address(Bangla)</label>
+                            <input type="text" name="bn_address" class="form-control" id="modal-office-bn_address" required autofocus>
+                        </div>
+
                         <!-- /name -->
 
                         <div class="form-group">
 
-                            <input type="submit" value=" সাবমিট" class="form-control btn btn-success">
+                            <input type="submit" value=" Submit" class="form-control btn btn-success">
                         </div>
                         <!-- /description -->
 

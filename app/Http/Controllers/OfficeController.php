@@ -18,9 +18,9 @@ class OfficeController extends Controller
         $divisions = division::all();
         return view("office.index",compact('divisions'));
     }
-    public function officeListApi()
+    public function officeListApi(Request $request)
     {
-        $offices = office::all();
+        $offices = office::where('upazilla_id',$request->upzilla_id)->get();
     
         return $offices;
     
@@ -49,16 +49,16 @@ class OfficeController extends Controller
         $office->division_id= $request->division_id;
         $office->district_id= $request->district_id;
         $office->upazilla_id= $request->upazilla_id;
-        $office->union_id= $request->union_id;
-        $office->village_id= $request->village_id;
+
 
         $office->name = $request->name;
+        $office->bn_name = $request->bn_name;
         $office->email =$request->email;
         $office->phone = $request->phone;
-        $office->about= $request->about;
+        $office->address= $request->address;
+        $office->bn_address= $request->bn_address;
         $office->save();
-        return $office;
-            return $request;
+        return back();
     }
 
     /**
@@ -92,7 +92,17 @@ class OfficeController extends Controller
      */
     public function update(Request $request, office $office)
     {
-        //
+        $office->division_id= $request->division_id;
+        $office->district_id= $request->district_id;
+        $office->upazilla_id= $request->upazilla_id;
+        $office->name = $request->name;
+        $office->bn_name = $request->bn_name;
+        $office->email =$request->email;
+        $office->phone = $request->phone;
+        $office->address= $request->address;
+        $office->bn_address= $request->bn_address;
+        $office->save();
+        return back();
     }
 
     /**
