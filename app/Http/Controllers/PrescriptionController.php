@@ -14,7 +14,8 @@ class PrescriptionController extends Controller
      */
     public function index()
     {
-        //
+        return view('prescription.index');
+
     }
 
     /**
