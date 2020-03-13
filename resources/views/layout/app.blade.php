@@ -88,7 +88,11 @@
     <script src="{{asset('js/custom/diagnosis.js')}}"></script>
     <script src="{{asset('js/custom/necropsy.js')}}"></script>
     <script src="{{asset('js/custom/advice.js')}}"></script>
+
     <script src="{{asset('js/custom/office.js')}}"></script>
+
+    <script src="{{asset('js/custom/prescription.js')}}"></script>
+
 
 
 

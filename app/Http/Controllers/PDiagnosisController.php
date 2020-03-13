@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\prescription;
+use App\pDiagnosis;
 use Illuminate\Http\Request;
 
-class PrescriptionController extends Controller
+class PDiagnosisController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class PrescriptionController extends Controller
      */
     public function index()
     {
-        return view('prescription.index');
-
+        //
     }
 
     /**
@@ -42,10 +41,10 @@ class PrescriptionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\prescription  $prescription
+     * @param  \App\pDiagnosis  $pDiagnosis
      * @return \Illuminate\Http\Response
      */
-    public function show(prescription $prescription)
+    public function show(pDiagnosis $pDiagnosis)
     {
         //
     }
@@ -53,10 +52,10 @@ class PrescriptionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\prescription  $prescription
+     * @param  \App\pDiagnosis  $pDiagnosis
      * @return \Illuminate\Http\Response
      */
-    public function edit(prescription $prescription)
+    public function edit(pDiagnosis $pDiagnosis)
     {
         //
     }
@@ -65,10 +64,10 @@ class PrescriptionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\prescription  $prescription
+     * @param  \App\pDiagnosis  $pDiagnosis
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, prescription $prescription)
+    public function update(Request $request, pDiagnosis $pDiagnosis)
     {
         //
     }
@@ -76,10 +75,10 @@ class PrescriptionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\prescription  $prescription
+     * @param  \App\pDiagnosis  $pDiagnosis
      * @return \Illuminate\Http\Response
      */
-    public function destroy(prescription $prescription)
+    public function destroy(pDiagnosis $pDiagnosis)
     {
         //
     }
