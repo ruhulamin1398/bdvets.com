@@ -15,14 +15,14 @@ class MedichineController extends Controller
      */
     public function index()
     {
-
-        $medichineCategories= MedichineCategory::all();
+        $medichineCategories = MedichineCategory::all();
         $medichines = medichine::all();
-
-
-       return view('medichine.index',compact('medichines','medichineCategories'));
+        return view('medichine.index', compact('medichines', 'medichineCategories'));
     }
-
+    public function medichineListApi()
+    {
+        return medichine::all();
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -42,13 +42,13 @@ class MedichineController extends Controller
     public function store(Request $request)
     {
 
-       $medichine = new medichine;
+        $medichine = new medichine;
 
-       $medichine->name= $request->name;
+        $medichine->name = $request->name;
         $medichine->description = $request->description;
         $medichine->medichine_category_id = $request->medichine_category_id;
-       $medichine->save();
-       return back();
+        $medichine->save();
+        return back();
     }
 
     /**
@@ -71,7 +71,7 @@ class MedichineController extends Controller
     public function edit(medichine $medichine)
     {
 
-       //
+        //
     }
 
     /**
@@ -83,12 +83,12 @@ class MedichineController extends Controller
      */
     public function update(Request $request, medichine $medichine)
     {
-        $medichine->name= $request->name;
+        $medichine->name = $request->name;
         $medichine->description = $request->description;
 
         $medichine->medichine_category_id = $request->medichine_category_id;
         $medichine->save();
-         return back();
+        return back();
     }
 
     /**
@@ -99,7 +99,7 @@ class MedichineController extends Controller
      */
     public function destroy(medichine $medichine)
     {
-      $medichine->delete();
-      return  back();
+        $medichine->delete();
+        return  back();
     }
 }

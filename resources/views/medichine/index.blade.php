@@ -38,7 +38,7 @@
 
                     <div class="col-auto">
 
-                        <span class="text-dark pl-2">Description</span>
+                        <span class="text-dark pl-2">Sig</span>
                         <input type="text" name="description" size="55" class="form-control mb-2" id="inlineFormInput" required >
                     </div>
 
@@ -73,7 +73,7 @@
                             <th>#</th>
                             <th>Name</th>
                             <th>Category</th>
-                            <th>Description</th>
+                            <th>Sig</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -83,7 +83,7 @@
                             <th>#</th>
                             <th>Name</th>
                             <th>Category</th>
-                            <th>Description</th>
+                            <th>Sig</th>
                             <th>Action</th>
 
                         </tr>
@@ -182,7 +182,7 @@
                     <!-- /name -->
                     <!-- description -->
                     <div class="form-group">
-                        <label class="col-form-label" for="medichine-modal-input-description">Description</label>
+                        <label class="col-form-label" for="medichine-modal-input-description">Sig</label>
                         <input type="text" name="description" class="form-control" id="medichine-modal-input-description" required>
                     </div>
 

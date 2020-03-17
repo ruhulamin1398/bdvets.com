@@ -17,6 +17,10 @@ class AdviceController extends Controller
         $advices= advice:: all();
         return view('prescription.advice',compact('advices') );
     }
+    public function adviceListApi()
+    {
+       return advice:: all();
+    }
 
     /**
      * Show the form for creating a new resource.

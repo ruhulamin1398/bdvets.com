@@ -1,6 +1,16 @@
 $(document).ready(function(){
 
 
+
+  $("#AddOfficeDoctorUserId").chosen();
+  $("#AddOfficeDoctorOfficeId").chosen();
+
+
+
+
+
+
+
     $(document).on('click', "#doctor-edit-item", function() {
 
 
@@ -20,6 +30,7 @@ $(document).ready(function(){
 
         // get the data
         var id = el.data('item-id');
+
         var name = row.children(".name").text();
         var officeName = row.children(".office").text();
         var designation = row.children(".designation").text();

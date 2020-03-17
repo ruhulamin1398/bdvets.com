@@ -18,6 +18,11 @@ class NecropsyController extends Controller
         $necropsyes= necropsy:: all();
         return view('prescription.necropsy',compact('necropsyes') );
     }
+    
+    public function necropsyListApi()
+    {
+        return  necropsy:: all();
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -37,11 +42,11 @@ class NecropsyController extends Controller
      */
     public function store(Request $request)
     {
-        $nexrops = new necropsy;
+        $necropsy = new necropsy;
 
-        $nexrops->name= $request->name;
-        $nexrops->description = $request->description;
-        $nexrops->save();
+        $necropsy->name= $request->name;
+        $necropsy->description = $request->description;
+        $necropsy->save();
         return back();
     }
 

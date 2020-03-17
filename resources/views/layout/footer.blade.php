@@ -1,8 +1,8 @@
   <!-- Footer -->
-   <footer class="sticky-footer bg-white">
+   <footer class="sticky-footer bg-abasas-dark">
     <div class="container my-auto">
       <div class="copyright text-center my-auto">
-        <span>Copyright &copy; Your Website 2020</span>
+        <span>Copyright &copy; Bdvets.com  {{now()->format("Y")}}</span>
       </div>
     </div>
    </footer>

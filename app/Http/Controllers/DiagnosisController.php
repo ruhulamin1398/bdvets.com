@@ -20,6 +20,11 @@ class DiagnosisController extends Controller
         
     }
 
+    public function diagnosisListApi()
+    {
+        return diagnosis:: all();
+    }
+
     /**
      * Show the form for creating a new resource.
      *

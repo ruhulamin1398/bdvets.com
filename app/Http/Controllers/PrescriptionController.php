@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\MedichineCategory;
 use App\prescription;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class PrescriptionController extends Controller
      */
     public function index()
     {
-        return view('prescription.index');
+
+        $medichineCategories = MedichineCategory::all();
+        return view('prescription.index',compact('medichineCategories'));
 
     }
 

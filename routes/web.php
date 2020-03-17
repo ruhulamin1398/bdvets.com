@@ -68,6 +68,11 @@ Route::get('farmer-profile-api/{farmer}', 'FarmerController@farmerProfileApi')->
 
 
 Route::get('clinical-sign-all-api', 'ClinicalSignController@signListApi');
+Route::get('tentative-diagnosis-all-api', 'DiagnosisController@diagnosisListApi');
+Route::get('advice-all-api', 'AdviceController@adviceListApi');
+Route::get('necropsy-all-api', 'NecropsyController@necropsyListApi');
+Route::get('medichine-all-api', 'MedichineController@medichineListApi');
+
 
 
 
