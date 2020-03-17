@@ -45,6 +45,7 @@ class ClinicalSignController extends Controller
         $sign->name= $request->name;
         $sign->description = $request->description;
         $sign->save();
+     
         return back();
     }
 
