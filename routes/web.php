@@ -62,6 +62,13 @@ Route::get('medichine-category-list-api', 'MedichineCategoryController@medichine
 Route::get('office-list-api', 'OfficeController@officeListApi')->name('office_list_api');
 
 
+Route::get('farmer-chack-api', 'FarmerController@farmerCheckApi')->name('farmer_chack_api');
+Route::get('farmer-profile-api/{farmer}', 'FarmerController@farmerProfileApi')->name('farmer_profile_api');
+
+
+
+Route::get('clinical-sign-all-api', 'ClinicalSignController@signListApi');
+
 
 
 

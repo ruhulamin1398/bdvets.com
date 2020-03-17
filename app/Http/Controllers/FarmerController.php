@@ -90,8 +90,27 @@ class FarmerController extends Controller
       
         return view('farmer.show', compact('farmer','divisions', 'districts' , 'upazillas', 'unions' , 'villages'));
 
+    }
+    
+    public function farmerCheckApi(Request $request)
+    {
+        $farmer = Farmer::where('phone',$request->phone)->first();
+        
+       if( is_null($farmer)){
+           return 0;
+       }
+       else
+       {
+          return $farmer->id;
+       }
 
     }
+
+public function farmerProfileApi(Farmer $farmer)
+{
+    $farmer->village_name= $farmer->village->bn_name;
+    return $farmer;
+}
    
 
     /**

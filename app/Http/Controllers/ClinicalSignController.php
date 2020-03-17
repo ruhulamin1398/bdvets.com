@@ -17,6 +17,10 @@ class ClinicalSignController extends Controller
         $signs= clinicalSign:: all();
         return view('prescription.sign',compact('signs') );
     }
+    public function signListApi( )
+    {
+        return clinicalSign:: all();
+    }
 
     /**
      * Show the form for creating a new resource.
