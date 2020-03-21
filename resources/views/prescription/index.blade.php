@@ -74,26 +74,26 @@
                             <div class="form-group row">
                                 <label for="inputSpecies" class="col-sm-4 col-form-label-sm">Species</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="species" class="form-control-sm" id="inputSpecies">
+                                    <input type="text" name="species" class="form-control-sm" value="chicken" id="inputSpecies">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="inputFor" class="col-sm-4 col-form-label-sm">For</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="for" class="form-control-sm" id="inputFor">
+                                    <input type="text" name="for" class="form-control-sm" value="Broiler" id="inputFor">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputAge" class="col-sm-4 col-form-label-sm">Age</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="age" class="form-control-sm" id="inputAge">
+                                    <input type="text" name="age" class="form-control-sm" value="8 Days" id="inputAge">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputBirds" class="col-sm-4 col-form-label-sm">NO. of animal</label>
                                 <div class="col-sm-6">
-                                    <input type="number" name="birds" class="form-control-sm" id="inputBirds">
+                                    <input type="number" name="birds" class="form-control-sm" value="200" id="inputBirds">
                                 </div>
                             </div>
 
@@ -101,7 +101,7 @@
                             <div class="form-group row">
                                 <label for="inputWeight" class="col-sm-4 col-form-label-sm">Weight</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="weight" class="form-control-sm" id="inputWeight">
+                                    <input type="text" name="weight" class="form-control-sm" value="300 gm" id="inputWeight">
                                 </div>
                             </div>
 
@@ -109,7 +109,7 @@
                             <div class="form-group row">
                                 <label for="inputFeeding" class="col-sm-4 col-form-label-sm">Feeding</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="feeding" class="form-control-sm" id="inputFeeding">
+                                    <input type="text" name="feeding" class="form-control-sm" value="water 100 LTR" id="inputFeeding">
                                 </div>
                             </div>
 
@@ -152,7 +152,7 @@
                             <div class="form-group row">
                                 <label for="inputComplain" class="col-sm-4 col-form-label-sm">Complain</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="complain" class="form-control-sm" id="inputComplain">
+                                    <input type="text" name="complain" class="form-control-sm" value="Diziness ,Nasal" id="inputComplain">
                                 </div>
                             </div>
 
@@ -166,7 +166,7 @@
                             <div class="form-group row">
                                 <label for="inputAffected" class="col-sm-4 col-form-label-sm">NO. of Affected</label>
                                 <div class="col-sm-6">
-                                    <input type="number" name="Affected" class="form-control-sm" id="inputAffected">
+                                    <input type="number" name="Affected" class="form-control-sm" value="10" id="inputAffected">
                                 </div>
                             </div>
 
@@ -174,7 +174,7 @@
                             <div class="form-group row">
                                 <label for="inputMedication" class="col-sm-4 col-form-label-sm">Medication</label>
                                 <div class="col-sm-6">
-                                    <input type="text" name="Medication" class="form-control-sm" id="inputMedication">
+                                    <input type="text" name="Medication" class="form-control-sm" value="Florefenicol , Neomycin" id="inputMedication">
                                 </div>
                             </div>
 
