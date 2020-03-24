@@ -26,8 +26,6 @@ Route::post("/village-store","LocationController@villageStore")->name('village-s
 Route::get("/village-delete","LocationController@villageDelete")->name('village-delete');
 
 
-Route::resource('offices', 'OfficeController');
-Route::resource('doctors', 'DoctorController');
 Route::resource('doctor-profiles', 'DoctorProfileController');
 
 Route::resource('farmers', 'FarmerController');
@@ -45,6 +43,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['middleware' => ['auth','isAdmin'] , 'prefix'=>'admin' ], function () {
+  
+    
+
+    Route::resource('offices', 'OfficeController');
+    Route::resource('doctors', 'DoctorController');
+});
+
 
 
 
@@ -57,15 +63,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 //     });
 
 // });
-Route::group(['middleware' => ['web','auth'] , 'prefix'=>'haha' ], function () {
-  
-    
-    Route::get('/test-group', function () {
-                // Uses first & second Middleware
-                return 'hahah';
-            });
-});
-
 
 
 

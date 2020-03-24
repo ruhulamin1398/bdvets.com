@@ -28,7 +28,7 @@
     <!-- Custom style-->
     <link href="{{asset('css/abasas.css')}}" rel="stylesheet">
 
-    yield('css')
+    @yield('css')
 
 </head>
 
@@ -44,7 +44,7 @@
 
         <!-- Page Wrapper -->
         <div id="wrapper">
-            @include('layout.sidebar')
+            @include('layout.adminSidebar')
             @yield('content')
         </div>
     </div>
@@ -110,7 +110,7 @@
 
 
 
-yield('js')
+@yield('js')
 
 </body>
 
