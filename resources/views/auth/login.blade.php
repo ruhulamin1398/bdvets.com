@@ -19,24 +19,23 @@
   
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
+<body class="bg-gradient-primary"   id="particles-js"   style="background-size: 100%;" >
 
-<body class="bg-gradient-primary">
 
-  <div class="container">
+  <div class="container"  >
 
+ 
     <!-- Outer Row -->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" >
 
-      <div class="col-xl-10 col-lg-12 col-md-9">
+      <div class="col-xl-5 col-lg-5 col-md-5">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block"></div>
-              <div class="col-lg-6">
+              <div class="col-lg-12">
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">BDVETS.COM</h1>
@@ -83,9 +82,11 @@
 
       </div>
 
+
     </div>
 
   </div>
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -96,7 +97,27 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
+  
+  <script src="{{asset('js/particles.js')}}"></script>
+  <script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
 </body>
 
 </html>

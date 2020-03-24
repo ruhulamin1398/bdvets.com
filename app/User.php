@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -36,8 +37,99 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function doctors(){
-        return $this->belongsToMany("App\role");
+
+    public function isActive()
+    {
+
+        $status = 'N/A';
+
+        if ($this->status)
+            $status = $this->status;
+
+        if ($status == 1)
+            return true;
+        else
+            return false;
     }
 
+
+
+
+
+
+
+
+
+
+
+    public function isAdmin()
+    {
+
+        $role = 'N/A';
+
+        if ($this->role)
+            $role = $this->role->role;
+
+        if ($role == 'admin')
+            return true;
+        else
+            return false;
+    }
+
+    public function isDoctor()
+    {
+
+        $role = 'N/A';
+
+        if ($this->role)
+            $role = $this->role->role;
+
+        if ($role == 'doctor')
+            return true;
+        else
+            return false;
+    }
+
+    public function isPharmacy()
+    {
+
+        $role = 'N/A';
+
+        if ($this->role)
+            $role = $this->role->role;
+
+        if ($role == 'pharmacy')
+            return true;
+        else
+            return false;
+    }
+
+
+    public function isUser()
+    {
+
+        $role = 'N/A';
+
+        if ($this->role)
+            $role = $this->role->role;
+
+        if ($role == 'user')
+            return true;
+        else
+            return false;
+    }
+
+
+
+///////////////////////////////////////////////////////
+
+    public function role()
+    {
+        return $this->belongsTo('App\role');
+    }
+
+    public function doctors()
+    {
+        return $this->belongsToMany("App\role");
+    }
 }

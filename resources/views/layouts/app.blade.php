@@ -10,7 +10,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+
+    <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
+  
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -76,5 +79,7 @@
             @yield('content')
         </main>
     </div>
+
+    
 </body>
 </html>

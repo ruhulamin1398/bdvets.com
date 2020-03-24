@@ -11,6 +11,11 @@
 |
 */
 
+use Illuminate\Foundation\Console\Presets\React;
+use Illuminate\Http\Request;
+
+Route::get('active','ActiveController@index')->name('active');
+
 
 
 Route::get("/","UserController@index")->name('index');
@@ -42,6 +47,24 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
+
+
+
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/test-group', function () {
+//         // Uses first & second Middleware
+//         return 'hahah';
+//     });
+
+// });
+Route::group(['middleware' => ['web','auth'] , 'prefix'=>'haha' ], function () {
+  
+    
+    Route::get('/test-group', function () {
+                // Uses first & second Middleware
+                return 'hahah';
+            });
+});
 
 
 
@@ -77,4 +100,8 @@ Route::get('medichine-all-api', 'MedichineController@medichineListApi');
 
 
 
-Route::resource('test', 'TestController');
+Route::resource('tests', 'TestController');
+Route::get('/unsubscribe/{user}', function (Request $request) {
+    // ...
+    return "hahah";
+})->name('unsubscribe');

@@ -28,6 +28,8 @@
     <!-- Custom style-->
     <link href="{{asset('css/abasas.css')}}" rel="stylesheet">
 
+    yield('css')
+
 </head>
 
 <body id="page-top">
@@ -103,6 +105,12 @@
 
     </script>
 
+
+
+
+
+
+yield('js')
 
 </body>
 

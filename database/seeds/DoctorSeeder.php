@@ -33,5 +33,35 @@ class DoctorSeeder extends Seeder
             ],
 
         ]);
+
+
+
+
+
+
+
+
+
+
+        DB::table('doctor_profiles')->insert([
+            [
+                'id' =>3,
+                'name' => 'Dr. Ruhul Amin',
+                'bn_name' => 'Dr. Ruhul Amin',
+                'degree_varsity' => 'DVM, Sau',
+                'bn_degree_varsity' => 'DVM, Sau',
+                'phone' => '018452656556',
+                'reg_no' => '125'
+               
+            ],
+
+        ]);
     }
+
+
+
+
+
+
+
 }

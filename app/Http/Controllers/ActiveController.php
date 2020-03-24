@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\doctor;
-use App\test;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\URL;
 
-class TestController extends Controller
+class ActiveController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,25 +14,25 @@ class TestController extends Controller
      */
     public function index()
     {
-        //     $user = Auth::user();
+        $user = Auth::user();
 
-        //    if($user->isActive()){
-        //        echo "Active";
-        //    }
-        //    else{
-        //        echo "deactive";
-        //    }
-        //   return ; 
+        if($user->isAdmin()){
+            return redirect('admin.index');
+        }
 
+        if($user->isDoctor()){
+            return redirect('doctor.index');
+        }
 
-        return URL::temporarySignedRoute(
-            'unsubscribe',
-            now()->addMinutes(1),
-            ['user' => 1]
-        );
-        return "hahaha";
-        return view('test');
+        if($user->isPharmacy()){
+            return redirect('admin/index');
+        }
+
+        if($user->isUser()){
+            return redirect('admin.index');
+        }
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -43,7 +40,6 @@ class TestController extends Controller
      */
     public function create()
     {
-
         //
     }
 
@@ -55,20 +51,16 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        $test = new test;
-        $test->name = "Ruhul";
-        // $test->id = $request->id;
-        $test->save();
-        return $test;
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\test  $test
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(test $test)
+    public function show($id)
     {
         //
     }
@@ -76,10 +68,10 @@ class TestController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\test  $test
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(test $test)
+    public function edit($id)
     {
         //
     }
@@ -88,10 +80,10 @@ class TestController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\test  $test
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, test $test)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -99,10 +91,10 @@ class TestController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\test  $test
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(test $test)
+    public function destroy($id)
     {
         //
     }
