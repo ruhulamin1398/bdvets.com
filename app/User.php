@@ -52,6 +52,20 @@ class User extends Authenticatable
             return false;
     }
 
+    public function isDeActive()
+    {
+
+        $status = 'N/A';
+
+        if ($this->status)
+            $status = $this->status;
+
+        if ($status == 1)
+            return true;
+        else
+            return false;
+    }
+
 
 
 
@@ -71,6 +85,19 @@ class User extends Authenticatable
             $role = $this->role->role;
 
         if ($role == 'admin')
+            return true;
+        else
+            return false;
+    }
+    public function isAdminOrDoctor()
+    {
+
+        $role = 'N/A';
+
+        if ($this->role)
+            $role = $this->role->id;
+
+        if ($role <=2)
             return true;
         else
             return false;
@@ -111,7 +138,7 @@ class User extends Authenticatable
         $role = 'N/A';
 
         if ($this->role)
-            $role = $this->role->role;
+            $role = $this->role->id;
 
         if ($role == 'user')
             return true;

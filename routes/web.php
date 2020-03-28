@@ -19,19 +19,30 @@ Route::get('active','ActiveController@index')->name('active');
 
 
 Route::get("/","UserController@index")->name('index');
-Route::get("/village","LocationController@village")->name('village');
-
-Route::post("/village-store","LocationController@villageStore")->name('village-store');
-
-Route::get("/village-delete","LocationController@villageDelete")->name('village-delete');
 
 
+
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth','isAdmin'] ], function () {
+    
+    Route::get("/village","LocationController@village")->name('village');
+    Route::post("/village-store","LocationController@villageStore")->name('village-store');
+    Route::get("/village-delete","LocationController@villageDelete")->name('village-delete');    
+    Route::resource('offices', 'OfficeController');
+    Route::resource('doctors', 'DoctorController');
+});
+
+
+Route::group(['middleware' => ['auth','isDoctor'] ], function () {
+  
+    
 Route::resource('doctor-profiles', 'DoctorProfileController');
-
-Route::resource('farmers', 'FarmerController');
-Route::resource('medichines', 'MedichineController');
-Route::resource('medichine-categories', 'MedichineCategoryController');
-
 
 Route::resource('prescriptions', 'PrescriptionController');
 Route::resource('advices', 'AdviceController');
@@ -39,19 +50,11 @@ Route::resource('clinical-signs', 'ClinicalSignController');
 Route::resource('necropsies', 'NecropsyController');
 Route::resource('diagnoses', 'DiagnosisController');
 
-Auth::routes();
+Route::resource('farmers', 'FarmerController');
+Route::resource('medichines', 'MedichineController');
+Route::resource('medichine-categories', 'MedichineCategoryController');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['middleware' => ['auth','isAdmin'] , 'prefix'=>'admin' ], function () {
-  
-    
-
-    Route::resource('offices', 'OfficeController');
-    Route::resource('doctors', 'DoctorController');
 });
-
-
 
 
 
