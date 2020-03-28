@@ -58,6 +58,9 @@ Route::resource('medichine-categories', 'MedichineCategoryController');
 
 
 
+Route::resource('medichine-sales', 'MedichineSaleController');
+Route::resource('medichine-sales-reports', 'MedichineSaleReportController');
+
 
 // Route::middleware(['auth'])->group(function () {
 //     Route::get('/test-group', function () {
