@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class adminDoctorMiddleware
+class adminDoctorPharmacy
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,6 @@ class adminDoctorMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::user()->isAdminOrDoctor()) {
-            return redirect('active');
-        }
         return $next($request);
     }
 }
