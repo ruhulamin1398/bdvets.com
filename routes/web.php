@@ -27,20 +27,50 @@ Route::get("/","UserController@index")->name('index');
 
 Auth::routes();
 
+
+
+Route::group(['middleware' => ['isActive'] ], function () {
+
+});
+
+Route::group(['middleware' => ['isDeactive'] ], function () {
+
+});
+
+Route::group(['middleware' => ['isAdmin'] ], function () {
+
+});
+
+Route::group(['middleware' => ['isDoctor'] ], function () {
+
+});
+
+Route::group(['middleware' => ['isPharmacy'] ], function () {
+
+});
+
+Route::group(['middleware' => ['adminDoctor'] ], function () {
+
+});
+Route::group(['middleware' => ['adminPharmacy'] ], function () {
+
+});
+Route::group(['middleware' => ['adminDoctorPharmacy'] ], function () {
+
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['auth','isAdmin'] ], function () {
+
     
     Route::get("/village","LocationController@village")->name('village');
     Route::post("/village-store","LocationController@villageStore")->name('village-store');
     Route::get("/village-delete","LocationController@villageDelete")->name('village-delete');    
     Route::resource('offices', 'OfficeController');
     Route::resource('doctors', 'DoctorController');
-});
 
 
-Route::group(['middleware' => ['auth','isDoctor'] ], function () {
-  
+ 
     
 Route::resource('doctor-profiles', 'DoctorProfileController');
 
@@ -54,7 +84,7 @@ Route::resource('farmers', 'FarmerController');
 Route::resource('medichines', 'MedichineController');
 Route::resource('medichine-categories', 'MedichineCategoryController');
 
-});
+
 
 
 
