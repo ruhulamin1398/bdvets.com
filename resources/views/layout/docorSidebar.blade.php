@@ -31,18 +31,7 @@
         <span>Village</span></a>
     </li>
     <!-- Divider -->
-
-
-
-
-  </div>
-
-
-  <div class="card  bg-abasas-dark mb-2">
-
-
-    <!-- Nav Item - Dashboard -->
-
+    <hr class="sidebar-divider m-1 p-0 ">
 
     <!--Category  Collapse Menu -->
     <li class="nav-item">
@@ -95,6 +84,31 @@
         </div>
       </div>
     </li>
+
+
+
+  </div>
+
+
+  <div class="card  bg-abasas-dark mb-2">
+
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item  ">
+      <a class="nav-link p-3 " href="{{route('doctor-profiles.edit',Auth::user()->id )}}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Profile</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider m-1 p-0 ">
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item  ">
+      <a class="nav-link p-3 " href="index">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Sallery</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider m-1 p-0 ">
     <!-- Nav Item - Dashboard -->

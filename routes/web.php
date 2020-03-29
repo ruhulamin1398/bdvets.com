@@ -30,29 +30,55 @@ Auth::routes();
 
 
 Route::group(['middleware' => ['isActive']], function () {
+
 });
+
+
+
 Route::group(['middleware' => ['isDeactive']], function () {
+
+
 });
+
+
 
 Route::group(['middleware' => ['isActive', 'isDeactive']], function () {
+
+
 });
 
+
+
 Route::group(['middleware' => ['isActive', 'isAdmin']], function () {
+
+
 });
+
+
+
+
 
 Route::group(['middleware' => ['isActive', 'isDoctor']], function () {
 
+    
     Route::resource('doctor-profiles', 'DoctorProfileController');
+
 });
 
+
+
+
 Route::group(['middleware' => ['isActive', 'isPharmacy']], function () {
+
 });
+
+
 
 Route::group(['middleware' => ['isActive', 'adminDoctor']], function () {
 
-    Route::get("/village", "LocationController@village")->name('village');
-    Route::post("/village-store", "LocationController@villageStore")->name('village-store');
-    Route::get("/village-delete", "LocationController@villageDelete")->name('village-delete');
+    Route::get("village", "LocationController@village")->name('village');
+    Route::post("village-store", "LocationController@villageStore")->name('village-store');
+    Route::get("village-delete", "LocationController@villageDelete")->name('village-delete');
 
     Route::resource('offices', 'OfficeController');
     Route::resource('doctors', 'DoctorController');
@@ -66,13 +92,15 @@ Route::group(['middleware' => ['isActive', 'adminDoctor']], function () {
     Route::resource('farmers', 'FarmerController');
     Route::resource('medichine-categories', 'MedichineCategoryController');
 });
+
+
 Route::group(['middleware' => ['isActive', 'adminPharmacy']], function () {
 
     Route::resource('medichine-sales', 'MedichineSaleController');
 });
+
+
 Route::group(['middleware' => ['isActive', 'adminDoctorPharmacy']], function () {
-
-
 
     Route::resource('medichines', 'MedichineController');
     Route::resource('medichine-sales-reports', 'MedichineSaleReportController');
@@ -82,23 +110,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-
-
-
-
-
-
-
-
-
-
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('/test-group', function () {
-//         // Uses first & second Middleware
-//         return 'hahah';
-//     });
-
-// });
 
 
 
