@@ -14,11 +14,11 @@
 use Illuminate\Foundation\Console\Presets\React;
 use Illuminate\Http\Request;
 
-Route::get('active','ActiveController@index')->name('active');
+Route::get('active', 'ActiveController@index')->name('active');
 
 
 
-Route::get("/","UserController@index")->name('index');
+Route::get("/", "UserController@index")->name('index');
 
 
 
@@ -29,67 +29,67 @@ Auth::routes();
 
 
 
-Route::group(['middleware' => ['isActive'] ], function () {
-
+Route::group(['middleware' => ['isActive']], function () {
+});
+Route::group(['middleware' => ['isDeactive']], function () {
 });
 
-Route::group(['middleware' => ['isDeactive'] ], function () {
-
+Route::group(['middleware' => ['isActive', 'isDeactive']], function () {
 });
 
-Route::group(['middleware' => ['isAdmin'] ], function () {
-
+Route::group(['middleware' => ['isActive', 'isAdmin']], function () {
 });
 
-Route::group(['middleware' => ['isDoctor'] ], function () {
+Route::group(['middleware' => ['isActive', 'isDoctor']], function () {
 
+    Route::resource('doctor-profiles', 'DoctorProfileController');
 });
 
-Route::group(['middleware' => ['isPharmacy'] ], function () {
-
+Route::group(['middleware' => ['isActive', 'isPharmacy']], function () {
 });
 
-Route::group(['middleware' => ['adminDoctor'] ], function () {
+Route::group(['middleware' => ['isActive', 'adminDoctor']], function () {
 
+    Route::get("/village", "LocationController@village")->name('village');
+    Route::post("/village-store", "LocationController@villageStore")->name('village-store');
+    Route::get("/village-delete", "LocationController@villageDelete")->name('village-delete');
+
+    Route::resource('offices', 'OfficeController');
+    Route::resource('doctors', 'DoctorController');
+
+    Route::resource('prescriptions', 'PrescriptionController');
+    Route::resource('advices', 'AdviceController');
+    Route::resource('clinical-signs', 'ClinicalSignController');
+    Route::resource('necropsies', 'NecropsyController');
+    Route::resource('diagnoses', 'DiagnosisController');
+
+    Route::resource('farmers', 'FarmerController');
+    Route::resource('medichine-categories', 'MedichineCategoryController');
 });
-Route::group(['middleware' => ['adminPharmacy'] ], function () {
+Route::group(['middleware' => ['isActive', 'adminPharmacy']], function () {
 
+    Route::resource('medichine-sales', 'MedichineSaleController');
 });
-Route::group(['middleware' => ['adminDoctorPharmacy'] ], function () {
+Route::group(['middleware' => ['isActive', 'adminDoctorPharmacy']], function () {
 
+
+
+    Route::resource('medichines', 'MedichineController');
+    Route::resource('medichine-sales-reports', 'MedichineSaleReportController');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-    
-    Route::get("/village","LocationController@village")->name('village');
-    Route::post("/village-store","LocationController@villageStore")->name('village-store');
-    Route::get("/village-delete","LocationController@villageDelete")->name('village-delete');    
-    Route::resource('offices', 'OfficeController');
-    Route::resource('doctors', 'DoctorController');
-
-
- 
-    
-Route::resource('doctor-profiles', 'DoctorProfileController');
-
-Route::resource('prescriptions', 'PrescriptionController');
-Route::resource('advices', 'AdviceController');
-Route::resource('clinical-signs', 'ClinicalSignController');
-Route::resource('necropsies', 'NecropsyController');
-Route::resource('diagnoses', 'DiagnosisController');
-
-Route::resource('farmers', 'FarmerController');
-Route::resource('medichines', 'MedichineController');
-Route::resource('medichine-categories', 'MedichineCategoryController');
 
 
 
 
 
-Route::resource('medichine-sales', 'MedichineSaleController');
-Route::resource('medichine-sales-reports', 'MedichineSaleReportController');
+
+
+
+
 
 
 // Route::middleware(['auth'])->group(function () {
