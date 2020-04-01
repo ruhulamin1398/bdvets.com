@@ -176,9 +176,9 @@
                        
                             @foreach ($divisions as $division)
                             @if($division->id == $farmer->division_id)
-                            <option value="{{$division->id}}" selected > {{$division->bn_name}}</option>
+                            <option value="{{$division->id}}" selected > {{$division->name}}</option>
                             @else
-                            <option value="{{$division->id}}"  > {{$division->bn_name}}</option>
+                            <option value="{{$division->id}}"  > {{$division->name}}</option>
                             @endif
                             @endforeach
                         </select>
@@ -190,9 +190,9 @@
                         <select class="form-control form-control" name="district_id" id="district_id" disabled>
                         @foreach ($districts as $district)
                             @if($district->id == $farmer->district_id)
-                            <option value="{{$district->id}}" selected > {{$district->bn_name}}</option>
+                            <option value="{{$district->id}}" selected > {{$district->name}}</option>
                             @else
-                            <option value="{{$district->id}}"  > {{$district->bn_name}}</option>
+                            <option value="{{$district->id}}"  > {{$district->name}}</option>
                             @endif
                             @endforeach
 
@@ -204,9 +204,9 @@
                         <select class="form-control form-control" name="upazilla_id" id="upazilla_id" disabled>
                         @foreach ($upazillas as $upazilla)
                             @if($upazilla->id == $farmer->upazilla_id)
-                            <option value="{{$upazilla->id}}" selected > {{$upazilla->bn_name}}</option>
+                            <option value="{{$upazilla->id}}" selected > {{$upazilla->name}}</option>
                             @else
-                            <option value="{{$upazilla->id}}"  > {{$upazilla->bn_name}}</option>
+                            <option value="{{$upazilla->id}}"  > {{$upazilla->name}}</option>
                             @endif
                             @endforeach
                         </select>
@@ -216,9 +216,9 @@
                         <select class="form-control form-control" id="union_id" disabled>
                         @foreach ($unions as $union)
                             @if($union->id == $farmer->union_id)
-                            <option value="{{$union->id}}" selected > {{$union->bn_name}}</option>
+                            <option value="{{$union->id}}" selected > {{$union->name}}</option>
                             @else
-                            <option value="{{$union->id}}"  > {{$union->bn_name}}</option>
+                            <option value="{{$union->id}}"  > {{$union->name}}</option>
                             @endif
                             @endforeach
 
@@ -229,9 +229,9 @@
                         <select class="form-control form-control" id="village_id" disabled>
                         @foreach ($villages as $village)
                             @if($village->id == $farmer->village_id)
-                            <option value="{{$village->id}}" selected > {{$village->bn_name}}</option>
+                            <option value="{{$village->id}}" selected > {{$village->name}}</option>
                             @else
-                            <option value="{{$village->id}}"  > {{$village->bn_name}}</option>
+                            <option value="{{$village->id}}"  > {{$village->name}}</option>
                             @endif
                             @endforeach
 

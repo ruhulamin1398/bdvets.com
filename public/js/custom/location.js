@@ -16,7 +16,7 @@ $(document).ready(function () {
             jQuery.each(districts, function (i) {
                 console.log(districts[i].name);
 
-                html += ' <option value="' + districts[i].id + '"> ' + districts[i].bn_name + '</option>';
+                html += ' <option value="' + districts[i].id + '"> ' + districts[i].name + '</option>';
             });
 
             console.log(html);
@@ -48,7 +48,7 @@ $(document).ready(function () {
             jQuery.each(upazills, function (i) {
                 console.log(upazills[i].name);
 
-                html += ' <option value="' + upazills[i].id + '"> ' + upazills[i].bn_name + '</option>';
+                html += ' <option value="' + upazills[i].id + '"> ' + upazills[i].name + '</option>';
             });
 
             console.log(html);
@@ -80,7 +80,7 @@ $(document).ready(function () {
             jQuery.each(unions, function (i) {
                 console.log(unions[i].name);
 
-                html += ' <option value="' + unions[i].id + '"> ' + unions[i].bn_name + '</option>';
+                html += ' <option value="' + unions[i].id + '"> ' + unions[i].name + '</option>';
             });
 
             $("#union_id").html(html);
@@ -107,7 +107,7 @@ $(document).ready(function () {
             jQuery.each(villages, function (i) {
                 console.log(villages[i].name);
 
-                html += ' <option value="' + villages[i].id + '"> ' + villages[i].bn_name + '</option>';
+                html += ' <option value="' + villages[i].id + '"> ' + villages[i].name + '</option>';
             });
             $("#village_id").html(html);
         });

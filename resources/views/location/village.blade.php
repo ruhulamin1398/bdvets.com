@@ -146,7 +146,7 @@
                         <select class="form-control form-control" name="division_id" id="division_id" required>
                             <option value="">Select Division </option>
                             @foreach ($divisions as $division)
-                            <option value="{{$division->id}}"> {{$division->bn_name}}</option>
+                            <option value="{{$division->id}}"> {{$division->name}}</option>
                             @endforeach
                         </select>
                     </div>

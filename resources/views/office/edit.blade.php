@@ -52,7 +52,7 @@
 
                             <div class="form-group col-12 ">
                                 <label for="bn_name" class="text-dark pl-2">Name(Bangla)</label>
-                                <input type="text" class="form-control form-control    mb-2  " value="{{$office->bn_name}}"
+                                <input type="text" class="form-control form-control    mb-2  " value="{{$office->name}}"
                                     name="bn_name" required>
                             </div>
 
@@ -140,9 +140,9 @@
 
                             @foreach ($divisions as $division)
                             @if($division->id == $office->division_id)
-                            <option value="{{$division->id}}" selected> {{$division->bn_name}}</option>
+                            <option value="{{$division->id}}" selected> {{$division->name}}</option>
                             @else
-                            <option value="{{$division->id}}"> {{$division->bn_name}}</option>
+                            <option value="{{$division->id}}"> {{$division->name}}</option>
                             @endif
                             @endforeach
                         </select>
@@ -154,9 +154,9 @@
                         <select class="form-control form-control" name="district_id" id="district_id" required>
                             @foreach ($districts as $district)
                             @if($district->id == $office->district_id)
-                            <option value="{{$district->id}}" selected> {{$district->bn_name}}</option>
+                            <option value="{{$district->id}}" selected> {{$district->name}}</option>
                             @else
-                            <option value="{{$district->id}}"> {{$district->bn_name}}</option>
+                            <option value="{{$district->id}}"> {{$district->name}}</option>
                             @endif
                             @endforeach
 
@@ -168,9 +168,9 @@
                         <select class="form-control form-control" name="upazilla_id" id="upazilla_id" required>
                             @foreach ($upazillas as $upazilla)
                             @if($upazilla->id == $office->upazilla_id)
-                            <option value="{{$upazilla->id}}" selected> {{$upazilla->bn_name}}</option>
+                            <option value="{{$upazilla->id}}" selected> {{$upazilla->name}}</option>
                             @else
-                            <option value="{{$upazilla->id}}"> {{$upazilla->bn_name}}</option>
+                            <option value="{{$upazilla->id}}"> {{$upazilla->name}}</option>
                             @endif
                             @endforeach
                         </select>
