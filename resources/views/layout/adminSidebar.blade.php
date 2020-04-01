@@ -26,7 +26,7 @@
 
     <hr class="sidebar-divider m-1 p-0 ">
     <li class="nav-item  ">
-      <a class="nav-link p-3 " href="village">
+      <a class="nav-link p-3 " href="{{route('village')}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Village</span></a>
     </li>

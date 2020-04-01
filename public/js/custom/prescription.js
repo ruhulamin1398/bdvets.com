@@ -30,9 +30,10 @@ $(document).ready(function () {
             console.log(link);
             $.get(link, function (id) {
                 if (id == 0) {
+                    var farmerLink =  $("#indexLink").val().trim() + '/farmers';
 
                     var html = '<div class="text-danger">Farmer Not Found</div>';
-                    html += ' <button  class="btn btn-success"> <a target="_blank" href="">Add</a> </button>';
+                    html += ' <button  class="btn btn-success"> <a target="_blank" href="'+farmerLink+'">Add</a> </button>';
                     $("#farmerProfile").html(html)
 
                 }

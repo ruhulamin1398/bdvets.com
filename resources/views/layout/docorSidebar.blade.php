@@ -26,28 +26,22 @@
 
     <hr class="sidebar-divider m-1 p-0 ">
     <li class="nav-item  ">
-      <a class="nav-link p-3 " href="village">
+      <a class="nav-link p-3 " href="{{route('village')}}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Village</span></a>
     </li>
-    <!-- Divider -->
+
     <hr class="sidebar-divider m-1 p-0 ">
 
-    <!--Category  Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed  p-3 " href="#" data-toggle="collapse" data-target="#collapseStaff" aria-expanded="true" aria-controls="collapseStaff">
-        <i class="fas fa-fw fa-cog"></i>
-        <span>Doctor</span>
-      </a>
-      <div id="collapseStaff" class="collapse" aria-labelledby="headingStaff" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
 
-          <a class="collapse-item" href="{{ route('doctors.index') }}">Doctors</a>
-          <a class="collapse-item" href="{{ route('offices.index') }}">Offices</a>
-
-        </div>
-      </div>
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item  ">
+      <a class="nav-link p-3 " href="{{route('offices.index')}}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>offices</span></a>
     </li>
+
+
 
     <hr class="sidebar-divider m-1 p-0 ">
     <!--Category  Collapse Menu -->
@@ -100,14 +94,6 @@
         <span>Profile</span></a>
     </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider m-1 p-0 ">
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item  ">
-      <a class="nav-link p-3 " href="index">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Sallery</span></a>
-    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider m-1 p-0 ">

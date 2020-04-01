@@ -40,7 +40,7 @@
     @include('layout.nav')
     @include('layout.form_link')
 
-    <div style="margin :20px 50px;">
+    <div >
 
         <!-- Page Wrapper -->
         <div id="wrapper">
