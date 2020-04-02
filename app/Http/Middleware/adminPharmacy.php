@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class adminPharmacy
 {
@@ -15,6 +16,10 @@ class adminPharmacy
      */
     public function handle($request, Closure $next)
     {
+        if (!Auth::user()->isAdminPharmacy()) {
+            return ('You are not allowed to this page');
+        }
+
         return $next($request);
     }
 }

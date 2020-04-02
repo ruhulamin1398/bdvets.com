@@ -17,7 +17,7 @@ class isDeactive
     public function handle($request, Closure $next)
     {
 
-        if (Auth::user()->isActive()) {
+        if (!Auth::user()->isDeActive()) {
             return redirect('active');
         }
         return $next($request);

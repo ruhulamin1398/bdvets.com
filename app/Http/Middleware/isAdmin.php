@@ -16,8 +16,8 @@ class isAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::user()->isActive()) {
-            return redirect('active');
+        if (!Auth::user()->isAdmin()) {
+            return ('You are not allowed to this page');
         }
         return $next($request);
     }

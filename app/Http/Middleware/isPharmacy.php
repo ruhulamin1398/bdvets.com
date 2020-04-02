@@ -17,7 +17,7 @@ class isPharmacy
     public function handle($request, Closure $next)
     {
          if (!Auth::user()->isPharmacy()) {
-            return redirect('active');
+            return ('You are not allowed to this page');
         }
         return $next($request);
     }

@@ -40,11 +40,21 @@
     @include('layout.nav')
     @include('layout.form_link')
 
-    <div >
+    <div>
 
         <!-- Page Wrapper -->
         <div id="wrapper">
+
+        @php 
+        $a = Auth::user()->role->role  ;
+        echo $a;
+        @endphp
+            @if( Auth::user()->isDoctor()   )
             @include('layout.adminSidebar')
+            @else
+            
+
+            @endif
             @yield('content')
         </div>
     </div>
@@ -102,7 +112,6 @@
 
     <script type="text/javascript">
         $(".chosen").chosen();
-
     </script>
 
 
@@ -110,7 +119,7 @@
 
 
 
-@yield('js')
+    @yield('js')
 
 </body>
 

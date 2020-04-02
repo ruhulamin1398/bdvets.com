@@ -18,7 +18,7 @@ class isUser
     {
 
         if (!Auth::user()->isUser()) {
-            return redirect('active');
+            return ('You are not allowed to this page');
         }
         return $next($request);
     }

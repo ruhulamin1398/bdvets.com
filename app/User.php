@@ -89,19 +89,53 @@ class User extends Authenticatable
         else
             return false;
     }
-    public function isAdminOrDoctor()
+    public function isAdminDoctor()
     {
 
         $role = 'N/A';
 
         if ($this->role)
-            $role = $this->role->id;
+            $role = $this->role->role;
 
-        if ($role <=2)
+
+        if ($role == 'admin' or $role == 'doctor')
             return true;
         else
             return false;
     }
+
+
+    public function isAdminDoctorPharmacy()
+    {
+
+        $role = 'N/A';
+
+        if ($this->role)
+            $role = $this->role->role;
+
+
+        if ($role == 'admin' or $role == 'doctor' or $role == 'pharmacy')
+            return true;
+        else
+            return false;
+    }
+
+    public function isAdminPharmacy()
+    {
+
+        $role = 'N/A';
+
+        if ($this->role)
+            $role = $this->role->role;
+
+
+        if ($role == 'admin'  or $role == 'pharmacy')
+            return true;
+        else
+            return false;
+    }
+
+
 
     public function isDoctor()
     {
@@ -148,7 +182,7 @@ class User extends Authenticatable
 
 
 
-///////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////
 
     public function role()
     {

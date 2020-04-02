@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class adminDoctor
 {
@@ -15,6 +16,11 @@ class adminDoctor
      */
     public function handle($request, Closure $next)
     {
+
+        if (!Auth::user()->isAdminDoctor()) {
+            return ('You are not allowed to this page');
+        }
+
         return $next($request);
     }
 }
