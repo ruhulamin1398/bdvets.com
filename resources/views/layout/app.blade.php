@@ -45,14 +45,14 @@
         <!-- Page Wrapper -->
         <div id="wrapper">
 
-        @php 
-        $a = Auth::user()->role->role  ;
-        echo $a;
-        @endphp
-            @if( Auth::user()->isDoctor()   )
+        @if( Auth::user()->role->role == 'admin' )
+
             @include('layout.adminSidebar')
+            @elseif ( Auth::user()->role->role == 'doctor' )
+
+            @include('layout.doctorSidebar')
             @else
-            
+            return "your are not allowed this ";
 
             @endif
             @yield('content')
