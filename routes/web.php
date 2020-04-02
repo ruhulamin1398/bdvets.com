@@ -15,6 +15,9 @@ use Illuminate\Foundation\Console\Presets\React;
 use Illuminate\Http\Request;
 
 Route::get('active', 'ActiveController@index')->name('active');
+Route::get('notPermitted',function(){
+    return "you are not permitted to access this page";
+});
 
 
 
@@ -42,16 +45,14 @@ Route::group(['middleware' => ['isDeactive']], function () {
 
 
 
-Route::group(['middleware' => ['isActive', 'isDeactive']], function () {
-
-
-});
 
 
 
 Route::group(['middleware' => ['isActive', 'isAdmin']], function () {
 
 
+    Route::resource('doctors', 'DoctorController');
+    
 });
 
 
@@ -59,6 +60,15 @@ Route::group(['middleware' => ['isActive', 'isAdmin']], function () {
 
 
 Route::group(['middleware' => ['isActive', 'isDoctor']], function () {
+
+    
+    Route::resource('prescriptions', 'PrescriptionController');
+
+
+    Route::resource('advices', 'AdviceController');
+    Route::resource('clinical-signs', 'ClinicalSignController');
+    Route::resource('necropsies', 'NecropsyController');
+    Route::resource('diagnoses', 'DiagnosisController');
 
     
     Route::resource('doctor-profiles', 'DoctorProfileController');
@@ -81,13 +91,6 @@ Route::group(['middleware' => ['isActive', 'adminDoctor']], function () {
     Route::get("village-delete", "LocationController@villageDelete")->name('village-delete');
 
     Route::resource('offices', 'OfficeController');
-    Route::resource('doctors', 'DoctorController');
-
-    Route::resource('prescriptions', 'PrescriptionController');
-    Route::resource('advices', 'AdviceController');
-    Route::resource('clinical-signs', 'ClinicalSignController');
-    Route::resource('necropsies', 'NecropsyController');
-    Route::resource('diagnoses', 'DiagnosisController');
 
     Route::resource('farmers', 'FarmerController');
     Route::resource('medichine-categories', 'MedichineCategoryController');

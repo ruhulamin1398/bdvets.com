@@ -45,10 +45,10 @@
         <!-- Page Wrapper -->
         <div id="wrapper">
 
-        @if( Auth::user()->role->role == 'admin' )
+        @if( Auth::user()->isAdmin() )
 
             @include('layout.adminSidebar')
-            @elseif ( Auth::user()->role->role == 'doctor' )
+            @elseif (Auth::user()->isDoctor())
 
             @include('layout.doctorSidebar')
             @else

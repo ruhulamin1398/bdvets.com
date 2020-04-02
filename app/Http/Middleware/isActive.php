@@ -17,7 +17,7 @@ class isActive
     public function handle($request, Closure $next)
     {
         if (!Auth::user()->isActive()) {
-            return redirect('deactive');
+            return redirect('notPermitted');
         }
 
         return $next($request);

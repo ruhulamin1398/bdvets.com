@@ -140,7 +140,6 @@
 
 
 
-
                     <div class="form-group">
                         <lab el for="division_id">Division</lab>
                         <select class="form-control form-control" name="division_id" id="division_id" required>

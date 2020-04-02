@@ -18,7 +18,7 @@ class isDeactive
     {
 
         if (!Auth::user()->isDeActive()) {
-            return redirect('active');
+            return redirect('notPermitted');
         }
         return $next($request);
     }

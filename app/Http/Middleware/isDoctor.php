@@ -17,7 +17,7 @@ class isDoctor
     public function handle($request, Closure $next)
     {
         if (!Auth::user()->isDoctor()) {
-            return ('You are not allowed to this page');
+            return redirect('notPermitted');
         }
         return $next($request);
     }
