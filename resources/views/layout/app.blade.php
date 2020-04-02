@@ -44,7 +44,7 @@
 
         <!-- Page Wrapper -->
         <div id="wrapper">
-            @include('layout.docorSidebar')
+            @include('layout.adminSidebar')
             @yield('content')
         </div>
     </div>
