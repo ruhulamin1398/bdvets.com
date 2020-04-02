@@ -32,6 +32,21 @@ class LocationController extends Controller
 
         return back();
     }
+     public function villageUpdate(Request $request )
+    {
+
+
+        $village = village::find($request->id);
+
+        $village->name = $request->name;
+        $village->bn_name = $request->bn_name;
+        $village->url = $request->url;
+
+        $village->save();
+
+        return back();
+    }
+
     public function villageDelete(Request $request)
     {
         village::find($request->id)->delete();

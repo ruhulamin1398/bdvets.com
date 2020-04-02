@@ -191,7 +191,7 @@
                 </button>
             </div>
             <div class="modal-body" id="attachment-body-content">
-                <form id="edit-form" class="form-horizontal" method="POST" action="">
+                <form id="edit-form" class="form-horizontal" method="POST" action="{{route('village-update')}}">
                     @csrf
 
 

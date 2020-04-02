@@ -89,6 +89,7 @@ Route::group(['middleware' => ['isActive', 'adminDoctor']], function () {
     Route::get("village", "LocationController@village")->name('village');
     Route::post("village-store", "LocationController@villageStore")->name('village-store');
     Route::get("village-delete", "LocationController@villageDelete")->name('village-delete');
+    Route::post("village-update", "LocationController@villageUpdate")->name('village-update');
 
     Route::resource('offices', 'OfficeController');
 
