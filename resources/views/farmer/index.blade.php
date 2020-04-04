@@ -258,7 +258,7 @@
                     <div class="form-group">
                         <label for="village_id">Villlage</label>
                         <select class="form-control form-control" id="village_id" required>
-                            <option value="">Select Union </option>
+                            <option value="">Select Village </option>
 
                         </select>
                     </div>

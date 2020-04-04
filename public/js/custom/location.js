@@ -103,7 +103,7 @@ $(document).ready(function () {
 
         $.get(link, function (villages, status) {
             console.log(villages);
-            var html = '<option  value="" >Select Union </option>';
+            var html = '<option  value="" >Select Villlage </option>';
             jQuery.each(villages, function (i) {
                 console.log(villages[i].name);
 
