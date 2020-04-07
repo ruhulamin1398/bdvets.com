@@ -135,9 +135,11 @@
     <hr class="sidebar-divider m-1 p-0 ">
     <!-- Nav Item - Dashboard -->
     <li class="nav-item  ">
-      <a class="nav-link p-3 " href="index">
+      <a class="nav-link p-3 "  href="{{ route('logout') }}" onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Logout</span></a>
+   
     </li>
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center  d-none d-md-inline">

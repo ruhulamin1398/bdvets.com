@@ -23,24 +23,29 @@ $(document).ready(function () {
 
         if (phone.length != 11) {
             var html = ' <div class="text-danger">Wrong Number</div>';
-            $("#farmerProfile").html(html)
+            $("#farmerProfile").html(html);
+            $("#farmerProperty").html("");
+            $("#pFarmerId").val(0);
         }
         else {
             var link = $("#indexLink").val().trim() + '/farmer-chack-api?phone=' + phone;
             console.log(link);
             $.get(link, function (id) {
                 if (id == 0) {
-                    var farmerLink =  $("#indexLink").val().trim() + '/farmers';
+                    var farmerLink = $("#indexLink").val().trim() + '/farmers';
 
                     var html = '<div class="text-danger">Farmer Not Found</div>';
-                    html += ' <button  class="btn btn-success"> <a target="_blank" href="'+farmerLink+'">Add</a> </button>';
-                    $("#farmerProfile").html(html)
+                    html += ' <button  class="btn btn-success"> <a target="_blank" href="' + farmerLink + '">Add</a> </button>';
+                    $("#farmerProfile").html(html);
+                    $("#farmerProperty").html("");
+                    $("#pFarmerId").val(0);
 
                 }
                 else {
 
                     var link = $("#indexLink").val().trim() + '/farmer-profile-api/' + id;
                     $.get(link, function (farmer) {
+                        $("#pFarmerId").val(farmer.id);
 
 
                         var html = '<div class="text-light font-weight-bold  text-left h5 text-capitalize ">Name  : ' + farmer.name + '</div>';
@@ -551,27 +556,35 @@ $(document).ready(function () {
 
         var id = $("#rxMedichine").val();
         $("#rxMedichineSig").val(medichines[id].description);
+        $("#rxMedichineAmount").val(0);
 
     });
 
     $(document).on('click', "#submitRxMedichine", function () {
-
-        var id = $("#rxMedichine").val();
-        medichines[id].description = $("#rxMedichineSig").val();
-        selectedMedichines[id] = {
-            id: medichines[id].id,
-            name: medichines[id].name,
-            description: medichines[id].description,
+        if ($("#rxMedichineAmount").val() < 1) {
+            alert('please Select Amount')
         }
+        else {
+
+            var id = $("#rxMedichine").val();
+            medichines[id].description = $("#rxMedichineSig").val();
+            selectedMedichines[id] = {
+                id: medichines[id].id,
+                name: medichines[id].name,
+                amount: $("#rxMedichineAmount").val(),
+                description: medichines[id].description,
+            }
 
 
-        var html = "";
-        jQuery.each(selectedMedichines, function (id) {
-            html += '<tr> <td class="text-dark" >' + selectedMedichines[id].name + ' </td>';
-            html += '<td class="text-dark" >' + selectedMedichines[id].description + ' </td>';
-            html += ' <td  class=" text-right " >  <button class="btn btn-sm btn-danger text-left" id="deSelectRxMedichine"   medichineId=' + id + '   > <i class="fa fa-trash" aria-hidden="false"> </i> </button></td> </tr>';
-        });
-        $("#selectedRxMedichine").html(html);
+            var html = "";
+            jQuery.each(selectedMedichines, function (id) {
+                html += '<tr> <td class="text-dark" >' + selectedMedichines[id].name + ' </td>';
+                html += ' <td class="text-dark" >' + selectedMedichines[id].amount + ' Pcs </td>';
+                html += '<td class="text-dark" >' + selectedMedichines[id].description + ' </td>';
+                html += ' <td  class=" text-right " >  <button class="btn btn-sm btn-danger text-left" id="deSelectRxMedichine"   medichineId=' + id + '   > <i class="fa fa-trash" aria-hidden="false"> </i> </button></td> </tr>';
+            });
+            $("#selectedRxMedichine").html(html);
+        }
 
     });
     $("body").on("click", "#deSelectRxMedichine", function () {
@@ -585,6 +598,7 @@ $(document).ready(function () {
         var html = "";
         jQuery.each(selectedMedichines, function (id) {
             html += '<tr> <td class="text-dark" >' + selectedMedichines[id].name + ' </td>';
+            html += ' <td class="text-dark" >' + selectedMedichines[id].amount + ' Pcs </td>';
             html += '<td class="text-dark" >' + selectedMedichines[id].description + ' </td>';
             html += ' <td  class=" text-right " >  <button class="btn btn-sm btn-danger text-left" id="deSelectRxMedichine"   medichineId=' + id + '   > <i class="fa fa-trash" aria-hidden="false"> </i> </button></td> </tr>';
         });
@@ -632,6 +646,39 @@ $(document).ready(function () {
 
 
 
+
+    /////////////////////////////////
+    // saving data 
+    $("#done-prescription-create-button").click(function () {
+        console.log("#done-prescription-create-button");
+
+        var createLink = $("#indexLink").val().trim() + '/prescriptions';
+
+
+
+        $.ajax({
+            url: createLink,
+            type: 'post',
+            data: {
+                '_token': $("#_token").val(),
+                'farmer_id': $("#pFarmerId").val(),
+                'signs': JSON.stringify(selectedSigns),
+                'diagnosis': JSON.stringify(selectedDiagnosis),
+                'advice': JSON.stringify(selectedAdvice),
+                'necropsies': JSON.stringify(selectedNecropsies),
+                'medichines': JSON.stringify(selectedMedichines)
+            },
+
+            success: function (data) {
+                console.log(data);
+                alert(success);
+            }
+        }).fail(function (data) {
+            console.log(data);
+        });
+
+
+    });
 
 
 

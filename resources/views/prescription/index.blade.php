@@ -22,9 +22,11 @@
                             <div class="form-row">
                                 <div class="col-auto font-weight-bold">Phone : </div>
                                 <div class="col-auto">
-                                    <input type="text" id="farmerPhoneField" class="form-control-sm mb-2 " size="45">
+                                    <input type="text" id="farmerPhoneField" class="form-control-sm mb-2 " size="45" autofocus>
                                 </div>
+
                             </div>
+                            <input type="text" id="pFarmerId" class="form-control-sm mb-2 " value="0"  hidden >
 
                         </nav>
                     </div>
@@ -69,7 +71,8 @@
 
                     <div class="card-body">
 
-                        <form>
+                        <form    >
+
 
                             <div class="form-group row">
                                 <label for="inputSpecies" class="col-sm-4 col-form-label-sm">Species</label>
@@ -450,14 +453,18 @@
                                 <label class="text-dark font-weight-bold" for="rxMedichine"> Medichine</label>
                                 <select id="rxMedichine" class="   form-control-sm mb-2 w-100   text-light "> </select>
                             </div>
-                            <div class="col-7  ">
+                            <div class="col-1  ">
+                                <label class="text-dark font-weight-bold" for="rxMedichineAmount"> Amount : </label>
+                                <input type="number" min='1' id="rxMedichineAmount" class="form-control-sm mb-2 w-100 text-dark">
+                            </div>
+                            <div class="col-6  ">
                                 <label class="text-dark font-weight-bold" for="rxMedichineSig"> Sig : </label>
                                 <input type="text" id="rxMedichineSig" class="form-control-sm mb-2 w-100 text-dark">
                             </div>
                             <div class="col-1  ">
 
-                            <label class="text-dark font-weight-bold w-100" for="submitRxMedichine"> .</label>
-                            <button class="btn btn-sm btn-success " id="submitRxMedichine"> Add </button>
+                                <label class="text-dark font-weight-bold w-100" for="submitRxMedichine"> .</label>
+                                <button class="btn btn-sm btn-success " id="submitRxMedichine"> Add </button>
                             </div>
                         </div>
 
@@ -486,7 +493,10 @@
 
 
         </div>
+        <div class="col-12 mb-3 ">
+            <button type="button" class=" btn-lg btn-success float-right  "  id="done-prescription-create-button"   >Done</button>
 
+        </div>
 
 
 
@@ -651,8 +661,8 @@
 
         </div>
     </div>
-</div>
 
+</div>
 
 
 
@@ -682,13 +692,13 @@
                         <label class="col-form-label" for="modal-input-name">Name</label>
                         <input type="text" name="name" class="form-control" required autofocus>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="catagory_id"> Category</label>
-                        <select class="form-control mb-2" name="medichine_category_id"    required>
+                        <select class="form-control mb-2" name="medichine_category_id" required>
                             <option value="1" selected="selected"> Select Category</option>
                             @foreach ($medichineCategories as $medichineCategory)
-                                <option value="{{$medichineCategory->id}}"> {{$medichineCategory->name}}</option>
+                            <option value="{{$medichineCategory->id}}"> {{$medichineCategory->name}}</option>
                             @endforeach
                         </select>
                     </div>
