@@ -22,7 +22,13 @@ class PrescriptionController extends Controller
      */
     public function index()
     {
-///////////////
+
+        
+        $prescriptions =   prescription::where('user_id' , Auth::user()->id)->get();
+   
+  
+        return view('prescription.index', compact('prescriptions'));
+
     }
 
     /**
@@ -34,7 +40,7 @@ class PrescriptionController extends Controller
     {
         
         $medichineCategories = MedichineCategory::all();
-        return view('prescription.index', compact('medichineCategories'));
+        return view('prescription.create', compact('medichineCategories'));
     }
 
     /**

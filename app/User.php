@@ -192,5 +192,6 @@ class User extends Authenticatable
     public function doctors()
     {
         return $this->belongsToMany("App\role");
-    }
+    } 
+   
 }
