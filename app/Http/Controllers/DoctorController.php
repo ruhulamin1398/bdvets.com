@@ -19,13 +19,13 @@ class DoctorController extends Controller
     {
         //
         //return doctor::find(1)->user->id;
-        $doctors= doctor::all();  
-        $offices=office::all();
-        $users=User::all();  
-       // return $doctors;
-        return view('doctor.index',compact('doctors','offices','users'));
+        $doctors = doctor::all();
+        $offices = office::all();
+        $users = User::all();
+        // return $doctors;
+        return view('doctor.index', compact('doctors', 'offices', 'users'));
     }
-    
+
 
     /**
      * Show the form for creating a new resource.
@@ -46,19 +46,25 @@ class DoctorController extends Controller
     public function store(Request $request)
     {
         //
-        $doctor = new doctor;
-        $doctor->user_id= $request->user_id;
-        $doctor->office_id= $request->office_id;
-        $doctor->designation= $request->designation;
-        $doctor->bn_designation= $request->bn_designation;
-        
-        $user= User:: find($request->user_id);
-        $user->role_id=2;
-        $user ->save();
+
+        $doctor = doctor::where('user_id', $request->user_id)->first();
+
+
+
+        if ($doctor == NULL) {
+            $doctor = new doctor;
+        }
+        $doctor->user_id = $request->user_id;
+        $doctor->office_id = $request->office_id;
+        $doctor->designation = $request->designation;
+        $doctor->bn_designation = $request->bn_designation;
+
+        $user = User::find($request->user_id);
+        $user->role_id = 2;
+        $user->save();
 
         $doctor->save();
         return back();
-
     }
 
     /**
@@ -92,11 +98,11 @@ class DoctorController extends Controller
      */
     public function update(Request $request, doctor $doctor)
     {
-    
 
-        $doctor->office_id= $request->office_id;
-        $doctor->designation= $request->designation;
-        $doctor->bn_designation= $request->bn_designation;
+
+        $doctor->office_id = $request->office_id;
+        $doctor->designation = $request->designation;
+        $doctor->bn_designation = $request->bn_designation;
         $doctor->save();
         return back();
     }
@@ -109,11 +115,11 @@ class DoctorController extends Controller
      */
     public function destroy(doctor $doctor)
     {
-       $doctor ->delete();
-       
-       $user= User:: find($doctor->user_id);
-       $user->role_id=4;
-       $user ->save();
-       return back();
+        $doctor->delete();
+
+        $user = User::find($doctor->user_id);
+        $user->role_id = 4;
+        $user->save();
+        return back();
     }
 }

@@ -18,6 +18,10 @@ class CreatePrescriptionsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('farmer_id');
             $table->timestamps();
+
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('farmer_id')->references('id')->on('farmers');
         });
     }
 

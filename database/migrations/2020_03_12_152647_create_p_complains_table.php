@@ -19,9 +19,8 @@ class CreatePComplainsTable extends Migration
             $table->unsignedBigInteger('prescription_id');
             $table->string('complain');
             $table->dateTime('first_seen');
-            $table->integer('count');
+            $table->integer('affected');
             $table->string('medication');
-            $table->string('other');
             $table->timestamps();
 
 

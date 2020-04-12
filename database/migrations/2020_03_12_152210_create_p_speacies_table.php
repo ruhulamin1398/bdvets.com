@@ -16,10 +16,11 @@ class CreatePSpeaciesTable extends Migration
         Schema::create('p_speacies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('prescription_id');
-            $table->string('name');
-            $table->integer('age');
-            $table->integer('count');
-            $table->double('weight',8,2);
+            $table->string('species');
+            $table->string('for');
+            $table->string('age');
+            $table->integer('birds');
+            $table->string('weight');
             $table->string('feeding');
             $table->timestamps();
 

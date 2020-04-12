@@ -7,6 +7,7 @@ use App\upazilla;
 use App\office;
 use App\division;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OfficeController extends Controller
 {
@@ -18,7 +19,14 @@ class OfficeController extends Controller
     public function index()
     {
         $divisions = division::all();
-        return view("office.index",compact('divisions'));
+        if(Auth::user()->isAdmin()){
+
+            return view("office.index",compact('divisions'));
+        }
+        else{
+
+        return view("office.readonly",compact('divisions'));
+        }
     }
     public function officeListApi(Request $request)
     {

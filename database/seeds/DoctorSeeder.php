@@ -13,19 +13,17 @@ class DoctorSeeder extends Seeder
     {
         DB::table('offices')->insert([
             [
-                'name' => 'habiganj upzilla Office',
-                'bn_name' => 'habiganj upzilla Office',
+                'name' => 'Upazila Livestock office',
+                'bn_name' => 'উপজেলা প্রানিসম্পদ দপ্তর',
                 'email' => 'habiganj.gmail.com',
                 'address' => '
-                     lorem  Lorem ipsum, dolor sit am
-                    et consectetur adipisicing elit
+                Narsangdi sador,Narsingdi
                  ',
                 'bn_address' => '
-                     lorem  Lorem ipsum, dolor sit am
-                    et consectetur adipisicing elit
+                নরসিংদী সদর,নরসিংদী
                  ',
 
-                'phone' => '018452656556',
+                'phone' => '6546544',
                 'division_id' => 1,
                 'district_id' => 1,
                 'upazilla_id' => 1,
@@ -46,12 +44,14 @@ class DoctorSeeder extends Seeder
         DB::table('doctor_profiles')->insert([
             [
                 'id' =>3,
-                'name' => 'Dr. Ruhul Amin',
-                'bn_name' => 'Dr. Ruhul Amin',
-                'degree_varsity' => 'DVM, Sau',
-                'bn_degree_varsity' => 'DVM, Sau',
+                'name' => ' Dr . mitun sarkar',
+                'bn_name' => ' ডাঃ মিঠুন সরকার ',
+                'degree_varsity' => 'DVM (SAU)',
+                'bn_degree_varsity' => 'ডি.ভি.এম.(সি.ক্র.বি.)',
+                'other_degree' => 'BCS (Livestock)',
+                'bn_other_degree' => 'বি.সি.এস.(প্রানি সম্পদ)',
                 'phone' => '018452656556',
-                'reg_no' => '125'
+                'reg_no' => '3210'
                
             ],
 

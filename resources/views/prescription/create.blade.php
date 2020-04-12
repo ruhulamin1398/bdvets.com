@@ -162,7 +162,7 @@
                             <div class="form-group row">
                                 <label for="inputFirstSeen" class="col-sm-4 col-form-label-sm">FirstSeen</label>
                                 <div class="col-sm-6">
-                                    <input type="date" name="first_seen" class="form-control-sm" id="inputFirstSeen">
+                                    <input type="date" name="first_seen" value="now()" class="form-control-sm" id="inputFirstSeen">
                                 </div>
                             </div>
 

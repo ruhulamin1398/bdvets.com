@@ -12,6 +12,8 @@ $(document).ready(function () {
 
     var selectedMedichines = {};
     var medichines = {};
+    var species = {};
+    var complains = {};
 
 
 
@@ -650,6 +652,37 @@ $(document).ready(function () {
     /////////////////////////////////
     // saving data 
     $("#done-prescription-create-button").click(function () {
+
+        
+
+
+        species={
+            species:$("#inputSpecies").val().trim(),
+            for:$("#inputFor").val().trim(),
+            age:$("#inputAge").val().trim(),
+            birds:$("#inputBirds").val().trim(),
+            weight:$("#inputWeight").val().trim(),
+            feeding:$("#inputFeeding").val().trim()
+        }
+
+        complains={
+            complain:$("#inputComplain").val().trim(),
+            first_seen:$("#inputFirstSeen").val().trim(),
+            affected:$("#inputAffected").val().trim(),
+            medication:$("#inputMedication").val().trim()
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         console.log("#done-prescription-create-button");
 
         var createLink = $("#indexLink").val().trim() + '/prescriptions';
@@ -662,11 +695,13 @@ $(document).ready(function () {
             data: {
                 '_token': $("#_token").val(),
                 'farmer_id': $("#pFarmerId").val(),
+                'species': JSON.stringify(species),
+                'complains': JSON.stringify(complains),
                 'signs': JSON.stringify(selectedSigns),
                 'diagnosis': JSON.stringify(selectedDiagnosis),
                 'advice': JSON.stringify(selectedAdvice),
                 'necropsies': JSON.stringify(selectedNecropsies),
-                'medichines': JSON.stringify(selectedMedichines)
+                'medichines': JSON.stringify(selectedMedichines),
             },
 
             success: function (data) {

@@ -11,7 +11,8 @@ $(document).ready(function () {
 
         $.get(link, function (offices, status) {
            console.log(offices);
-            var html = '';
+           var html = '';
+           var htmlReadOnly = '';
             var temp = 1;
             jQuery.each(offices, function (i) {
              
@@ -20,12 +21,26 @@ $(document).ready(function () {
                 html += ' <td class="name" > ' + offices[i].name + '</td>';
                 html += ' <td class="phone" > ' + offices[i].phone + '</td>';
                 html += ' <td > <button type="button" class="btn btn-success" id="edit-product-button" > <a href='+  $("#indexLink").val()+'/offices/'+offices[i].id+'/edit'+   '> <i class="fa fa-edit text-light" aria-hidden="false"> </i> </a></button>   </td>';
-                 html += '</tr>';
+                html += '</tr>';
+             
+                htmlReadOnly += '<tr>'
+                htmlReadOnly += ' <td > ' + temp ++ + '</td>';
+                htmlReadOnly += ' <td class="name" > ' + offices[i].name + '</td>';
+                htmlReadOnly += ' <td class="phone" > ' + offices[i].phone + '</td>';
+                htmlReadOnly += '</tr>';
+
+
+
+
             });
             
 
+
             console.log(html);
+
+            
             $("#upazila_office_table_data").html(html);
+            $("#upazila_office_table_data_readonly").html(htmlReadOnly);
             $("#officeTable").DataTable(); 
           
 

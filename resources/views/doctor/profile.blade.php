@@ -8,7 +8,7 @@
     <div class="row ">
 
         <!-- main body start -->
-        <div class="col-xl-8 col-lg-8 col-md-8   ">
+        <div class="col-xl-12 col-lg-12 col-md-12   ">
 
             <div class="card mb-4 shadow " id="villageStore">
 
@@ -61,6 +61,15 @@
                             </div>
 
                             <div class="form-group  col-12 ">
+                                <label for="bn_degree_varsity"    class="text-dark pl-2" >Other Degree</label>
+                                <input type="text" class="form-control form-control    mb-2  " value="{{$doctorProfile->other_degree}}" name="other_degree"  >
+                            </div>
+                            <div class="form-group  col-12 ">
+                                <label for="bn_degree_varsity"    class="text-dark pl-2" >Other Degree (Bangla)</label>
+                                <input type="text" class="form-control form-control    mb-2  " value="{{$doctorProfile->bn_other_degree}}" name="bn_other_degree"  >
+                            </div>
+
+                            <div class="form-group  col-12 ">
                                 <label for="reg_no"    class="text-dark pl-2" >Registration No </label>
                                 <input type="text" class="form-control form-control    mb-2  " value="{{$doctorProfile->reg_no}}" name="reg_no"  required>
                             </div>
@@ -96,36 +105,7 @@
 
         </div>
 
-        <!-- Left Sidebar Start -->
-        <div class="col-xl-4 col-lg-4 col-md-4   ">
 
-            <div class="card mb-4 shadow p-3">
-
-
-
-                <div class="card-header py-3 bg-abasas-dark">
-                    <nav class="navbar navbar-dark ">
-                        <a class="navbar-brand"> Location</a>
-                        <button class="btn btn-success" data-toggle="collapse" href=".location-card-body" > Change Location</button>
-
-                    </nav>
-                </div>
-
-
-
-
-                <div class="location-card-body  collapse ">
-
-
-
-
-
-
-
-
-                </div>
-            </div>
-        </div>
     </div>
 
 </div>

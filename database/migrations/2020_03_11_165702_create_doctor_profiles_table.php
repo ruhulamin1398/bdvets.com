@@ -21,6 +21,8 @@ class CreateDoctorProfilesTable extends Migration
             $table->string('phone')->nullable();
             $table->string('degree_varsity')->nullable();
             $table->string('bn_degree_varsity')->nullable();
+            $table->string('other_degree')->nullable();
+            $table->string('bn_other_degree')->nullable();
             $table->string('reg_no')->nullable();
 
             $table->timestamps();

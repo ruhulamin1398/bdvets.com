@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class doctor extends Model
 {
+    
     //
     public function office(){
         return $this->belongsTo("App\office");

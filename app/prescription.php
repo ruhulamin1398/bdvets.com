@@ -9,4 +9,25 @@ class prescription extends Model
     public function farmer(){
         return $this->belongsTo('App\Farmer');
     }
+    public function profile(){
+        return $this->hasOne("App\doctorProfile",'id','user_id');
+    }
+    public function species(){
+        return $this->hasOne('App\pSpeacies');
+    }
+    public function complain(){
+        return $this->hasOne('App\pComplain');
+    }
+    public function signs(){
+        return $this->hasMany('App\pClinicalSign');
+    }
+    public function diagnosis(){
+        return $this->hasMany('App\pDiagnosis');
+    }
+    public function necropsies(){
+        return $this->hasMany('App\pNecropsy');
+    }
+    public function advices(){
+        return $this->hasMany('App\pAdvice');
+    }
 }

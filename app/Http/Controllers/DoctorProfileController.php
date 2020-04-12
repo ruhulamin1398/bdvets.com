@@ -78,6 +78,8 @@ class DoctorProfileController extends Controller
         $doctorProfile->phone= $request->phone;
         $doctorProfile->degree_varsity= $request->degree_varsity;
         $doctorProfile->bn_degree_varsity= $request->bn_degree_varsity;
+        $doctorProfile->degree_varsity= $request->other_degree;
+        $doctorProfile->bn_degree_varsity= $request->bn_other_degree;
         $doctorProfile->reg_no= $request->reg_no;
 
 

@@ -69,7 +69,8 @@
       <div id="collapsePrescription" class="collapse" aria-labelledby="headingPrescription" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
 
-          <a class="collapse-item" href="{{ route('prescriptions.create') }}">New Prescription</a>
+        <a class="collapse-item" href="{{ route('prescriptions.create') }}">New Prescription</a>
+        <a class="collapse-item" href="{{ route('prescriptions.index') }}">My Prescriptions</a>
           <a class="collapse-item" href="{{ route('clinical-signs.index') }}">Clinical Signs</a>
           <a class="collapse-item" href="{{ route('diagnoses.index') }}">Tentative Diagnosis</a>
           <a class="collapse-item" href="{{ route('necropsies.index') }}">Necropsy</a>
