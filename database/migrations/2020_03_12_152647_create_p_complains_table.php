@@ -21,6 +21,7 @@ class CreatePComplainsTable extends Migration
             $table->dateTime('first_seen');
             $table->integer('affected');
             $table->string('medication');
+            $table->string('other',1000);
             $table->timestamps();
 
 

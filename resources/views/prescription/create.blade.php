@@ -26,7 +26,7 @@
                                 </div>
 
                             </div>
-                            <input type="text" id="pFarmerId" class="form-control-sm mb-2 " value="0"  hidden >
+                            <input type="text" id="pFarmerId" class="form-control-sm mb-2 " value="0" hidden>
 
                         </nav>
                     </div>
@@ -71,7 +71,7 @@
 
                     <div class="card-body">
 
-                        <form    >
+                        <form>
 
 
                             <div class="form-group row">
@@ -178,6 +178,13 @@
                                 <label for="inputMedication" class="col-sm-4 col-form-label-sm">Medication</label>
                                 <div class="col-sm-6">
                                     <input type="text" name="Medication" class="form-control-sm" value="Florefenicol , Neomycin" id="inputMedication">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputOther" class="col-sm-4 col-form-label-sm">Other</label>
+                                <div class="col-sm-6"> 
+                                    <textarea type="text" name="other" class="form-control" id="inputOther" > </textarea>
                                 </div>
                             </div>
 
@@ -494,7 +501,7 @@
 
         </div>
         <div class="col-12 mb-3 ">
-            <button type="button" class=" btn-lg btn-success float-right  "  id="done-prescription-create-button"   >Done</button>
+            <button type="button" class=" btn-lg btn-success float-right  " id="done-prescription-create-button">Done</button>
 
         </div>
 

@@ -97,6 +97,7 @@ class PrescriptionController extends Controller
         $pComplain->first_seen = $complains->first_seen;
         $pComplain->affected = $complains->affected;
         $pComplain->medication = $complains->medication;
+        $pComplain->other = $complains->other;
 
         $pComplain->save();
 

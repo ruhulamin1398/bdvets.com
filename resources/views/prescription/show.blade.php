@@ -117,7 +117,7 @@
 		}
 
 		.upleft {
-			height: 250px;
+			height: 350px;
 			width: 33%;
 			float: left;
 			border: 1px solid #A29FA2;
@@ -243,11 +243,12 @@
 				</div>
 				<div class="upleft clear">
 					<div style="padding:20px;">
-						owners complain :{{$prescription->complain->complain}}<br>
-						secrition<br>
-						illness fist seen : {{$prescription->complain->first_seen}}<br>
-						number of effected: {{$prescription->complain->affected}}<br>
-						medication : {{$prescription->complain->medication}}<br>
+						Owners complain :{{$prescription->complain->complain}}<br>
+						Secrition<br>
+						Illness fist seen : {{$prescription->complain->first_seen}}<br>
+						Number of effected: {{$prescription->complain->affected}}<br>
+						Medication : {{$prescription->complain->medication}}<br>
+						Complain : {{$prescription->complain->complain}}<br>
 					</div>
 				</div>
 

@@ -669,7 +669,8 @@ $(document).ready(function () {
             complain:$("#inputComplain").val().trim(),
             first_seen:$("#inputFirstSeen").val().trim(),
             affected:$("#inputAffected").val().trim(),
-            medication:$("#inputMedication").val().trim()
+            medication:$("#inputMedication").val().trim(),
+            other:$("#inputOther").val().trim()
         }
 
 
