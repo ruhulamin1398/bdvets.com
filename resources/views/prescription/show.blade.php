@@ -91,7 +91,7 @@
 			color: #226ABA;
 			font-size: 19px;
 			margin-top: 3px;
-			text-align: right;
+			text-align: left;
 		}
 
 		.righthead p {
@@ -103,7 +103,7 @@
 		.righthead h2 {
 			font-size: 24px;
 			color: #B926C9;
-			text-align: right;
+			text-align: left;
 		}
 
 		.maincontant {
@@ -128,13 +128,13 @@
 
 		.downcontant {
 			background-color: #FCFCFC;
-			height: 807px;
+			height: 600px;
 
 		}
 
 		.downleft {
 			width: 33%;
-			height: 800px;
+			height: 600px;
 			border: 1px solid #A29FA2;
 			float: left;
 			padding: 30px;
@@ -152,7 +152,7 @@
 
 		.downright {
 			width: 60%;
-			height: 800px;
+			height: 600px;
 			border: 1px solid #A29FA2;
 			float: right;
 
@@ -186,14 +186,19 @@
 
 		<div class="header clear">
 			<div class="leftheader clear">
-				<h1> {{$prescription->profile->bn_name}} </h1>
-				<p>{{$prescription->profile->bn_degree_varsity}}</p>
-				<p>রেজিঃ নং- {{$prescription->profile->reg_no}}</p>
-				<p> বি.সি.এস.(প্রানি সম্পদ)</p>
-				<h3> ভেটেরিনারি সারজন</h3>
-				<h2>উপজেলা প্রানিসম্পদ দপ্তর</h2>
-				<p> নরসিংদী সদর,নরসিংদী</p>
-				<p> মুবাইল : ১৩২৪৬৭৬৪</p>
+				<h1> {{$prescription->doctor->profile->bn_name}} </h1>
+				{{$prescription->doctor->profile->bn_degree_varsity}} <br>
+				রেজিঃ নং- {{$prescription->doctor->profile->reg_no}} <br>
+				{{$prescription->doctor->profile->bn_other_degree}} <br>
+
+				<h3>{{$prescription->doctor->bn_designation}} </h3>
+				<h2>{{$prescription->doctor->office->bn_name}} </h2>
+				{{$prescription->doctor->office->bn_address}} <br>
+				মুবাইল :  {{$prescription->doctor->office->phone}} <br>
+				<!-- <h3> ভেটেরিনারি সারজন</h3>
+				<h2>উপজেলা প্রানিসম্পদ দপ্তর</h2> -->
+				<!-- <p> নরসিংদী সদর,নরসিংদী</p> -->
+				<!-- <p> মুবাইল : ১৩২৪৬৭৬৪</p> -->
 
 
 
@@ -206,14 +211,14 @@
 			</div>
 			<div class="righthead clear">
 
-				<h1> {{$prescription->profile->name}} </h1>
-				<p>{{$prescription->profile->degree_varsity}}</p>
-				<p>Reg No:- {{$prescription->profile->reg_no}}</p>
-				<p> BCS (Livestock) </p>
-				<h2> Vaterinary Surgeon</h2>
-				<h3>Upazila Livestock office</h3>
-				<p> Narsangdi sador,Narsingdi.</p>
-				<p>Mobile: 6546544</p>
+				<h1> {{$prescription->doctor->profile->name}} </h1>
+				{{$prescription->doctor->profile->degree_varsity}} <br>
+				Reg No:- {{$prescription->doctor->profile->reg_no}} <br>
+				{{$prescription->doctor->profile->other_degree}} <br>
+				<h3>{{$prescription->doctor->designation}} </h3>
+				<h2>{{$prescription->doctor->office->name}} </h2>
+				{{$prescription->doctor->office->address}} <br>
+				Mobile: {{$prescription->doctor->office->phone}} <br>
 
 
 			</div>

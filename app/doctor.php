@@ -15,8 +15,10 @@ class doctor extends Model
         return $this->belongsTo("App\User");
     }
     public function profile(){
-        return $this->hasOne("App\doctorProfile",'user_id','user_id');
+        return $this->hasOne("App\doctorProfile",'id','user_id');
     }
+
+  
     public  function otherDegrees(){
         return $this->hasMany('App\doctorOtherDegree','user_id','user_id');
     }

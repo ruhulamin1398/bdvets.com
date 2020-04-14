@@ -9,8 +9,9 @@ class prescription extends Model
     public function farmer(){
         return $this->belongsTo('App\Farmer');
     }
-    public function profile(){
-        return $this->hasOne("App\doctorProfile",'id','user_id');
+
+       public function doctor(){
+        return $this->hasOne("App\doctor",'user_id','user_id');
     }
     public function species(){
         return $this->hasOne('App\pSpeacies');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\doctor;
+use App\prescription;
 use App\test;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +18,7 @@ class TestController extends Controller
      */
     public function index()
     {
+       return  prescription::first()->doctor->office;   
         //     $user = Auth::user();
 
         //    if($user->isActive()){
@@ -28,11 +30,16 @@ class TestController extends Controller
         //   return ; 
 
 
-        return URL::temporarySignedRoute(
-            'unsubscribe',
-            now()->addMinutes(1),
-            ['user' => 1]
-        );
+        // return URL::temporarySignedRoute(
+        //     'unsubscribe',
+        //     now()->addMinutes(1),
+        //     ['user' => 1]
+        // );
+
+
+
+
+
         return "hahaha";
         return view('test');
     }
